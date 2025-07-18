@@ -1,5 +1,5 @@
 {
-  "name": "frappe-components",
+  "name": "@frappe-components/design-system",
   "version": "0.0.0",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -10,10 +10,11 @@
     ".": {
       "import": "./dist/index.js",
       "require": "./dist/index.js"
-    }
+    },
+    "./theme.css": "./src/theme.css"
   },
-   "dependencies": {
+  "dependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
-   }
+  }
 }
