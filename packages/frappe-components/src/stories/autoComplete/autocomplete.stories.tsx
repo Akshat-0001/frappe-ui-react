@@ -79,7 +79,7 @@ export const SingleSelect_SimpleOptions: Story = {
       <Autocomplete
         {...args}
         modelValue={value}
-        onChange={setValue}
+        onChange={(_value) => {setValue(_value as string)}}
         options={options}
       />
     );
@@ -96,7 +96,7 @@ export const SingleSelect_ObjectOptions: Story = {
       <Autocomplete
         {...args}
         modelValue={value}
-        onChange={setValue}
+        onChange={(_value) => {setValue(_value as string)}}
         options={options}
         compareFn={(a, b) => a?.value === b?.value}
       />
@@ -104,7 +104,7 @@ export const SingleSelect_ObjectOptions: Story = {
   },
   args: {
     options: options,
-    label: 'Select a Product',
+    label: 'Select Person',
   },
 };
 
@@ -115,7 +115,7 @@ export const MultiSelect_ObjectOptions: Story = {
       <Autocomplete
         {...args}
         modelValue={values}
-        onChange={setValues}
+        onChange={(_value) => {setValues(_value as string[])}}
         options={options}
         multiple
         compareFn={(a, b) => a?.value === b?.value}
@@ -124,8 +124,7 @@ export const MultiSelect_ObjectOptions: Story = {
   },
   args: {
     options: options,
-    label: 'Select Products (Multi)',
-    placeholder: 'Add products...',
+    label: 'Select Persons',
     showFooter: true,
   },
 };
@@ -137,13 +136,13 @@ export const GroupedOptions: Story = {
       <Autocomplete
         {...args}
         modelValue={value}
-        onChange={setValue}
+        onChange={(_value) => {setValue(_value as string)}}
         options={options}
       />
     );
   },
   args: {
     options: options,
-    label: 'Select Food Item',
+    label: 'Select Person',
   },
 };
