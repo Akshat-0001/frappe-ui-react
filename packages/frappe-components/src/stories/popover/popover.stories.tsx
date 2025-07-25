@@ -1,7 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import Popover from "./index";
+import Popover from "./popover";
 
 const meta: Meta<typeof Popover> = {
   title: "Components/Popover",

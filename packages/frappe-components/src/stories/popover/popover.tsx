@@ -25,7 +25,6 @@ function getOrCreatePopoverRoot(): HTMLElement {
   return root;
 }
 
-// Props for the render function (slots)
 interface PopoverRenderProps {
   togglePopover: (flag?: boolean | React.MouseEvent) => void;
   updatePosition: () => void;
@@ -43,10 +42,8 @@ interface PopoverTransitionClasses {
   leaveToClass?: string;
 }
 
-// Props for the Popover component itself
-interface PopoverProps
+export interface PopoverProps
   extends Omit<React.HTMLAttributes<HTMLDivElement>, "children" | "onSelect"> {
-  // Omit children and onSelect to redefine
   show?: boolean;
   trigger?: "click" | "hover";
   hoverDelay?: number;
