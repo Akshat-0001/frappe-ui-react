@@ -24,7 +24,13 @@
     "forceConsistentCasingInFileNames": true,
     "pretty": true,
     "typeRoots": ["./typings", "./node_modules/@types"],
-    "types": ["jest", "jest-extended", "node"]
+    "types": ["jest", "jest-extended", "node"],
+    "noUncheckedSideEffectImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "@design-system/*": ["packages/design-system/src/*"],
+      "@frappe-components/*": ["packages/frappe-components/src/*"]
+    }
   },
   "exclude": ["packages/*/node_modules/**"]
 }
