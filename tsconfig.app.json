@@ -25,7 +25,6 @@
 
     "baseUrl": ".",
     "paths": {
-      "@design-system/*": ["packages/design-system/src/*"],
       "@frappe-components/*": ["packages/frappe-components/src/*"]
     }
   },
