@@ -1,7 +1,6 @@
 import React, { useMemo, useCallback } from 'react';
 import { CheckboxProps } from './types';
-
-type SizeTypes = {sm: string; md: string}
+import type { SizeTypes } from '../../types';
 
 const Checkbox: React.FC<CheckboxProps> = ({
   size = 'sm',
