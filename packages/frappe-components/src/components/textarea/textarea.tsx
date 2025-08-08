@@ -62,7 +62,7 @@ export const Textarea: React.FC<TextareaProps> = ({
       paddingClasses,
       variantClasses,
       disabled ? "text-ink-gray-5" : "text-ink-gray-8",
-      "transition-colors w-full block",
+      "transition-colors w-full block outline-none focus:outline-none",
       className,
     ].join(" ");
   }, [size, variant, disabled, className]);
