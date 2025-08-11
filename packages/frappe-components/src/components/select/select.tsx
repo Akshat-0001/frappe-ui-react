@@ -12,7 +12,6 @@ const Select: React.FC<SelectProps> = ({
   htmlId,
   prefix,
 }) => {
-
   const handleChange = useCallback(
     (e: React.ChangeEvent<HTMLSelectElement>) => {
       if (onChange) {
@@ -122,8 +121,12 @@ const Select: React.FC<SelectProps> = ({
         value={value}
         onChange={handleChange}
       >
+        {placeholder && !value && (
+        <option />
+      )}
         {selectOptions.map((option) => (
           <option
+            selected={option.value === value}
             key={option.value}
             value={option.value}
             disabled={option.disabled}

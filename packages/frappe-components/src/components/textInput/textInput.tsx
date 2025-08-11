@@ -142,7 +142,7 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
           value={inputValue}
           required={rest.required}
           onChange={handleChange}
-          className={`appearance-none bg-transparent ${inputClasses}`}
+          className={`appearance-none ${inputClasses}`}
           {...rest}
         />
         {suffix && (

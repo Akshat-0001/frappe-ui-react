@@ -3,7 +3,7 @@ import { FormControl } from "../formControl";
 import { Tooltip } from "../tooltip";
 import KeyboardShortcut from "../keyboardShortcut";
 import { PasswordProps } from "./types";
-import FeatherIcon from "../featherIcon";
+import { Eye, EyeOff } from "lucide-react";
 
 const Password: React.FC<PasswordProps> = ({ value, ...attrs }) => {
   const [show, setShow] = useState(false);
@@ -64,9 +64,9 @@ const Password: React.FC<PasswordProps> = ({ value, ...attrs }) => {
                   onClick={() => setShow(!show)}
                 >
                   {show ? (
-                    <FeatherIcon name="eye-off" className="h-full w-full" />
+                    <EyeOff className="h-full w-full" />
                   ) : (
-                    <FeatherIcon name="eye" className="h-full w-full" />
+                    <Eye className="h-full w-full" />
                   )}
                 </div>
               )}

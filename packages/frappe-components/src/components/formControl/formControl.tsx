@@ -33,8 +33,6 @@ const FormControl: React.FC<FormControlProps> = ({
     return `${sizeClasses} text-ink-gray-5`;
   }, [size]);
 
-  
-
   const renderControl = () => {
     switch (type) {
       case 'select':
