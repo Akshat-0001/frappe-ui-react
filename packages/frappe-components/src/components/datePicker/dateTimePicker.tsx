@@ -1,10 +1,10 @@
-import * as React from "react";
 import type { DatePickerProps } from "./types";
 import { useDatePicker } from "./useDatePicker";
 import { getDate, getDateValue } from "./utils";
 import { Popover } from "../popover";
 import { Button } from "../Button";
 import { TextInput } from "../textInput";
+import { useEffect, useMemo, useState } from "react";
 
 function twoDigit(n: number) {
   return n.toString().padStart(2, "0");
@@ -17,21 +17,21 @@ function useDateTimePicker({
   value?: string;
   onChange?: (v: string) => void;
 }) {
-  const today = React.useMemo(() => getDate(), []);
-  const [open, setOpen] = React.useState(false);
-  const [dateValue, setDateValue] = React.useState<string>(
+  const today = useMemo(() => getDate(), []);
+  const [open, setOpen] = useState(false);
+  const [dateValue, setDateValue] = useState<string>(
     typeof value === "string" ? value : ""
   );
-  const [hour, setHour] = React.useState(0);
-  const [minute, setMinute] = React.useState(0);
-  const [second, setSecond] = React.useState(0);
-  const [currentMonth] = React.useState<number>(today.getMonth() + 1);
+  const [hour, setHour] = useState(0);
+  const [minute, setMinute] = useState(0);
+  const [second, setSecond] = useState(0);
+  const [currentMonth] = useState<number>(today.getMonth() + 1);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (typeof value === "string") setDateValue(value);
   }, [value]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (dateValue) {
       const d = getDate(dateValue);
       setHour(d.getHours());

@@ -1,10 +1,10 @@
-import * as React from "react";
 import type { DatePickerProps } from "./types";
 import { useDatePicker } from "./useDatePicker";
 import { getDate, getDateValue } from "./utils";
 import { Popover } from "../popover";
 import { Button } from "../Button";
 import { TextInput } from "../textInput";
+import { useEffect, useMemo, useState } from "react";
 
 function useDateRangePicker({
   value,
@@ -13,26 +13,26 @@ function useDateRangePicker({
   value?: string[];
   onChange?: (v: string[]) => void;
 }) {
-  const today = React.useMemo(() => getDate(), []);
-  const [open, setOpen] = React.useState(false);
+  const today = useMemo(() => getDate(), []);
+  const [open, setOpen] = useState(false);
   // Internal selection state
-  const [fromDate, setFromDate] = React.useState<string>(value?.[0] || "");
-  const [toDate, setToDate] = React.useState<string>(value?.[1] || "");
+  const [fromDate, setFromDate] = useState<string>(value?.[0] || "");
+  const [toDate, setToDate] = useState<string>(value?.[1] || "");
   // Applied (confirmed) state
-  const [appliedFromDate, setAppliedFromDate] = React.useState<string>(
+  const [appliedFromDate, setAppliedFromDate] = useState<string>(
     value?.[0] || ""
   );
-  const [appliedToDate, setAppliedToDate] = React.useState<string>(
+  const [appliedToDate, setAppliedToDate] = useState<string>(
     value?.[1] || ""
   );
-  const [currentYear, setCurrentYear] = React.useState<number>(
+  const [currentYear, setCurrentYear] = useState<number>(
     today.getFullYear()
   );
-  const [currentMonth, setCurrentMonth] = React.useState<number>(
+  const [currentMonth, setCurrentMonth] = useState<number>(
     today.getMonth() + 1
   );
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (Array.isArray(value) && value.length === 2) {
       setFromDate(value[0] || "");
       setToDate(value[1] || "");

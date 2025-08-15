@@ -1,8 +1,8 @@
-import * as React from "react";
 import { Meta, StoryObj } from "@storybook/react-vite";
 import { MemoryRouter } from "react-router";
 import { DatePicker, DateTimePicker, DateRangePicker } from "./index";
 import { Story, Variant } from "../Story";
+import { useState } from "react";
 
 const meta: Meta = {
   title: "Components/DatePicker",
@@ -30,7 +30,7 @@ export const Date: DatePickerStory = {
     value: "",
   },
   render: (args) => {
-    const [dateValue, setDateValue] = React.useState("");
+    const [dateValue, setDateValue] = useState("");
     return (
       <MemoryRouter>
         <Story layout={{ type: "grid", width: 700 }}>
@@ -70,7 +70,7 @@ export const DateTime: DateTimePickerStory = {
     value: "",
   },
   render: (args) => {
-    const [dateTimeValue, setDateTimeValue] = React.useState("");
+    const [dateTimeValue, setDateTimeValue] = useState("");
     return (
       <MemoryRouter>
         <Story layout={{ type: "grid", width: 700 }}>
@@ -111,7 +111,7 @@ export const DateRange: DateRangePickerStory = {
     value: ["", ""],
   },
   render: (args) => {
-    const [dateRangeValue, setDateRangeValue] = React.useState(["", ""]);
+    const [dateRangeValue, setDateRangeValue] = useState(["", ""]);
     return (
       <MemoryRouter>
         <Story layout={{ type: "grid", width: 700 }}>
