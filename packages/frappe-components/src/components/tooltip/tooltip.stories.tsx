@@ -32,7 +32,7 @@ export const WithText: Story = {
   render: (args) => {
     return (
       <MemoryRouter>
-        <Tooltip body={args.text} hoverDelay={args.hoverDelay}>
+        <Tooltip text={args.text} hoverDelay={args.hoverDelay}>
           <Button theme="red">Delete</Button>
         </Tooltip>
       </MemoryRouter>
@@ -42,6 +42,7 @@ export const WithText: Story = {
     text: "This action cannot be undone",
     hoverDelay: 1,
     placement: 'top',
+    body: null
   },
 };
 

@@ -41,7 +41,7 @@ export default {
 
 export const Default: StoryObj<CheckboxProps> = {
   render: (args) => {
-    const [value , setValue] = useState(false)
+    const [value , setValue] = useState(false);
     return (
       <div className="p-2">
         <Checkbox

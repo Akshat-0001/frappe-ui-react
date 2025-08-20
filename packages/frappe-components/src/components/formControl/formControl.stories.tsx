@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import FormControl from './formControl';
 import FeatherIcon from '../featherIcon';
+import { useState } from 'react';
 
 const meta: Meta<typeof FormControl> = {
   title: 'Components/FormControl',
@@ -98,6 +99,12 @@ export const Select: Story = {
       { label: 'Three', value: '3' },
     ],
   },
+  render: (args) => {
+    const [value , setValue] = useState('');
+    return(
+      <FormControl {...args} value={value} onChange={(_value: string) => setValue(_value)}/>
+    )
+  }
 };
 
 export const Autocomplete: Story = {
@@ -109,6 +116,12 @@ export const Autocomplete: Story = {
       { label: 'Three', value: '3' },
     ],
   },
+  render: (args) => {
+    const [value , setValue] = useState('');
+    return(
+      <FormControl {...args} value={value} onChange={(_value: string) => setValue(_value)}/>
+    )
+  }
 };
 
 export const Checkbox: Story = {
@@ -116,6 +129,12 @@ export const Checkbox: Story = {
     type: 'checkbox',
     label: 'Checkbox Label',
   },
+  render: (args) => {
+    const [value , setValue] = useState(false);
+    return(
+      <FormControl {...args} value={value} onChange={(_value: boolean) => setValue(_value)}/>
+    )
+  }
 };
 
 export const WithPrefixIcon: Story = {
