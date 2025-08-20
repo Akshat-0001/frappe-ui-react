@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { TextInput } from "./index";
 import FeatherIcon from "../featherIcon";
@@ -32,6 +33,26 @@ const sizes = ["sm", "md", "lg", "xl"] as const;
 const variants = ["subtle", "outline"] as const;
 
 export const AllTypes: Story = {
+  render: (args) => {
+    const [val, setVal] = useState(args.value || "");
+    return (
+      <Story layout={{ type: "grid", width: 700 }}>
+        {inputTypes.map((type) => (
+          <Variant key={type} title={type}>
+            <TextInput
+              {...args}
+              type={type}
+              value={val}
+              onChange={(v: string | number) => {
+                setVal(String(v));
+                args.onChange?.(v);
+              }}
+            />
+          </Variant>
+        ))}
+      </Story>
+    );
+  },
   args: {
     size: "sm",
     variant: "subtle",
@@ -41,15 +62,6 @@ export const AllTypes: Story = {
     className: "",
     onChange: () => {},
   },
-  render: (args) => (
-    <Story layout={{ type: "grid", width: 700 }}>
-      {inputTypes.map((type) => (
-        <Variant key={type} title={type}>
-          <TextInput {...args} type={type} />
-        </Variant>
-      ))}
-    </Story>
-  ),
   argTypes: {
     type: { control: false, description: "Input type" },
     size: {
@@ -86,6 +98,23 @@ export const AllTypes: Story = {
 };
 
 export const PrefixIcon: Story = {
+  render: (args) => {
+    const [val, setVal] = useState(args.value || "");
+    return (
+      <Story layout={{ type: "grid", width: 700 }}>
+        <Variant title="Prefix slot icon">
+          <TextInput
+            {...args}
+            value={val}
+            onChange={(v: string | number) => {
+              setVal(String(v));
+              args.onChange?.(v);
+            }}
+          />
+        </Variant>
+      </Story>
+    );
+  },
   args: {
     type: "text",
     size: "md",
@@ -96,17 +125,27 @@ export const PrefixIcon: Story = {
     prefix: <FeatherIcon className="w-4" name="search" />,
     onChange: () => {},
   },
-  render: (args) => (
-    <Story layout={{ type: "grid", width: 700 }}>
-      <Variant title="Prefix slot icon">
-        <TextInput {...args} />
-      </Variant>
-    </Story>
-  ),
   argTypes: { ...AllTypes.argTypes },
 };
 
 export const SuffixIcon: Story = {
+  render: (args) => {
+    const [val, setVal] = useState(args.value || "");
+    return (
+      <Story layout={{ type: "grid", width: 700 }}>
+        <Variant title="Suffix slot icon">
+          <TextInput
+            {...args}
+            value={val}
+            onChange={(v: string | number) => {
+              setVal(String(v));
+              args.onChange?.(v);
+            }}
+          />
+        </Variant>
+      </Story>
+    );
+  },
   args: {
     type: "text",
     size: "md",
@@ -117,17 +156,27 @@ export const SuffixIcon: Story = {
     suffix: <FeatherIcon className="w-4" name="search" />,
     onChange: () => {},
   },
-  render: (args) => (
-    <Story layout={{ type: "grid", width: 700 }}>
-      <Variant title="Suffix slot icon">
-        <TextInput {...args} />
-      </Variant>
-    </Story>
-  ),
   argTypes: { ...AllTypes.argTypes },
 };
 
 export const PrefixAvatar: Story = {
+  render: (args) => {
+    const [val, setVal] = useState(args.value || "");
+    return (
+      <Story layout={{ type: "grid", width: 700 }}>
+        <Variant title="Prefix slot avatar">
+          <TextInput
+            {...args}
+            value={val}
+            onChange={(v: string | number) => {
+              setVal(String(v));
+              args.onChange?.(v);
+            }}
+          />
+        </Variant>
+      </Story>
+    );
+  },
   args: {
     type: "text",
     size: "md",
@@ -143,12 +192,5 @@ export const PrefixAvatar: Story = {
     ),
     onChange: () => {},
   },
-  render: (args) => (
-    <Story layout={{ type: "grid", width: 700 }}>
-      <Variant title="Prefix slot avatar">
-        <TextInput {...args} />
-      </Variant>
-    </Story>
-  ),
   argTypes: { ...AllTypes.argTypes },
 };

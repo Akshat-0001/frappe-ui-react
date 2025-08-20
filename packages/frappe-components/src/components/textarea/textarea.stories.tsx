@@ -1,3 +1,4 @@
+import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Textarea } from "./index";
 import { Story, Variant } from "../Story";
@@ -17,6 +18,23 @@ type Story = StoryObj<typeof Textarea>;
 const sizes = ["sm", "md", "lg", "xl"] as const;
 
 export const SubtleVariant: Story = {
+  render: (args) => {
+    const [val, setVal] = useState(args.value || "");
+    return (
+      <Story layout={{ type: "grid", width: 700 }}>
+        <Variant title="Subtle Variant">
+          <Textarea
+            {...args}
+            value={val}
+            onChange={(value: string) => {
+              setVal(value);
+              args.onChange?.(value);
+            }}
+          />
+        </Variant>
+      </Story>
+    );
+  },
   args: {
     size: "sm",
     variant: "subtle",
@@ -28,13 +46,6 @@ export const SubtleVariant: Story = {
     rows: 3,
     onChange: () => {},
   },
-  render: (args) => (
-    <Story layout={{ type: "grid", width: 700 }}>
-      <Variant title="Subtle Variant">
-        <Textarea {...args} />
-      </Variant>
-    </Story>
-  ),
   argTypes: {
     size: {
       control: "select",
@@ -77,6 +88,23 @@ export const SubtleVariant: Story = {
 };
 
 export const OutlineVariant: Story = {
+  render: (args) => {
+    const [val, setVal] = useState(args.value || "");
+    return (
+      <Story layout={{ type: "grid", width: 700 }}>
+        <Variant title="Outline Variant">
+          <Textarea
+            {...args}
+            value={val}
+            onChange={(value: string) => {
+              setVal(value);
+              args.onChange?.(value);
+            }}
+          />
+        </Variant>
+      </Story>
+    );
+  },
   args: {
     size: "sm",
     variant: "outline",
@@ -88,13 +116,6 @@ export const OutlineVariant: Story = {
     rows: 3,
     onChange: () => {},
   },
-  render: (args) => (
-    <Story layout={{ type: "grid", width: 700 }}>
-      <Variant title="Outline Variant">
-        <Textarea {...args} />
-      </Variant>
-    </Story>
-  ),
   argTypes: {
     size: {
       control: "select",
