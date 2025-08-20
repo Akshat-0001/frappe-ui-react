@@ -2,6 +2,7 @@ import { Meta, StoryObj } from '@storybook/react-vite';
 import Checkbox from './checkbox';
 import { CheckboxProps } from './types';
 import { action } from 'storybook/actions';
+import { useState } from 'react';
 
 export default {
   title: 'Components/Checkbox',
@@ -40,12 +41,15 @@ export default {
 
 export const Default: StoryObj<CheckboxProps> = {
   render: (args) => {
+    const [value , setValue] = useState(false)
     return (
       <div className="p-2">
         <Checkbox
           {...args}
-          onChange={(value) => {
-            action('checked')(value);
+          value={value}
+          onChange={(_value) => {
+            action('checked')(_value);
+            setValue(_value);
           }}
           label={args.label ?? "Enable feature"}
         />
