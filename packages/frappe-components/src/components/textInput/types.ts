@@ -12,7 +12,6 @@ export interface TextInputProps {
   debounce?: number;
   required?: boolean;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   prefix?: (args?: any) => ReactNode;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

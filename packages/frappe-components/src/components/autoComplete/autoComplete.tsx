@@ -12,10 +12,10 @@ import {
   ComboboxOptions,
 } from "@headlessui/react";
 import { Popover } from "../popover";
-import { Button } from "../button";
 import LoadingIndicator from "../loadingIndicator";
 import FeatherIcon from "../featherIcon";
 import type { AutocompleteOption, AutocompleteOptionGroup, AutocompleteProps, Option } from "./types";
+import { Button } from "../button";
 
 const Autocomplete: React.FC<AutocompleteProps> = ({
   value,
