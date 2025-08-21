@@ -9,8 +9,8 @@ import { useCalendarData } from './hooks/useCalendarData';
 
 
 export const CalendarDaily = () => {
-  const { state, actions } = useContext(CalendarContext);
-  const { events, config, currentDate } = state;
+  const { handleCellDblClick } = useContext(CalendarContext);
+  const { events, config, currentDate } = useContext(CalendarContext);
   const { timedEvents, fullDayEvents } = useCalendarData(events);
   const gridRef = useRef<HTMLDivElement>(null);
 
@@ -26,6 +26,7 @@ export const CalendarDaily = () => {
   }, [hourHeight]);
 
   const parsedCurrentDate = parseDate(currentDate);
+  console.log(timeArray, timedEvents[parsedCurrentDate])
 
   return (
     <div className="h-[90%] min-h-[500px] min-w-[600px]">
@@ -46,7 +47,7 @@ export const CalendarDaily = () => {
         </div>
 
         <div className="grid h-full w-full grid-cols-1 pb-2">
-          <div className="relative border-r border-l border-gray-200">
+          <div className="calendar-column relative border-r border-l border-gray-200">
             <div
               className="flex w-full flex-wrap gap-2 overflow-y-auto border-b border-gray-200 p-1 transition-all"
               style={{ minHeight: `${config.redundantCellHeight}px` }}
@@ -60,13 +61,12 @@ export const CalendarDaily = () => {
                 />
               ))}
             </div>
-            <div className="relative">
               {timeArray.map(time => (
                 <div
                   key={time}
                   className="relative flex text-gray-800"
                   data-time-attr={time}
-                  onDoubleClick={(e) => actions.handleCellDblClick(e, currentDate.toDate(), time)}
+                  onDoubleClick={(e) => handleCellDblClick(e, currentDate.toDate(), time)}
                 >
                   <div
                     className="w-full border-b border-gray-200"
@@ -83,7 +83,6 @@ export const CalendarDaily = () => {
                 />
               ))}
               <CalendarTimeMarker date={currentDate.toDate()} />
-            </div>
           </div>
         </div>
       </div>

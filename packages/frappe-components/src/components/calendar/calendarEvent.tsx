@@ -47,11 +47,14 @@ export const CalendarEvent = ({ event, date, extraClassName = '' }: CalendarEven
     const diff = calculateDiff(updatedEvent.from_time, updatedEvent.to_time);
     const height = Math.max(32.5, diff * minuteHeight);
     let top = calculateMinutes(updatedEvent.from_time) * minuteHeight;
-    if (activeView === 'Day') top += config.redundantCellHeight;
+
+    if (activeView === 'Day'){
+      top += config.redundantCellHeight;
+    }
 
     const width = isResizing || isRepositioning ? '100%' : `${80 - (event.hallNumber || 0) * 20}%`;
     const left = isResizing || isRepositioning ? '0' : `${(event.hallNumber || 0) * 20}%`;
-    
+  
     return { ...commonStyles, height: `${height}px`, top: `${top}px`, width, left };
   }, [event, updatedEvent, activeView, isResizing, isRepositioning, repositionState, config]);
 

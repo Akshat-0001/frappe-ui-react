@@ -1,7 +1,7 @@
 import { useContext, useEffect, useMemo, useState } from 'react';
 
-import './CalendarTimeMarker.css';
 import { CalendarContext } from './calendarContext';
+import styled from 'styled-components';
 
 
 interface CalendarTimeMarkerProps {
@@ -9,9 +9,23 @@ interface CalendarTimeMarkerProps {
   redundantCellHeight?: number;
 }
 
+const StyledDiv = styled.div`
+  &:before{
+    content: '';
+    display: block;
+    width: 12px;
+    height: 12px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+`
+
 export const CalendarTimeMarker = ({ date, redundantCellHeight = 0 }: CalendarTimeMarkerProps) => {
-  const { state } = useContext(CalendarContext);
-  const { config } = state;
+  const { config } = useContext(CalendarContext);
   const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
@@ -44,7 +58,7 @@ export const CalendarTimeMarker = ({ date, redundantCellHeight = 0 }: CalendarTi
       className="absolute left-0 right-0 z-10 w-full pl-2"
       style={topPositionStyle}
     >
-      <div className="current-time relative h-0.5 bg-red-600" />
+      <StyledDiv className='relative h-0.5 bg-red-600' />
     </div>
   );
 };

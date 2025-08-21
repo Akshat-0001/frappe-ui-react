@@ -1,3 +1,4 @@
+import dayjs, { isDayjs } from "dayjs";
 import type { CalendarEvent, ColorMap } from "./types";
 
 export function getCalendarDates(month: number, year: number): Date[] {
@@ -87,12 +88,17 @@ export function parseDate(date: string | Date): string {
   if (typeof date === 'string') {
     date = new Date(date);
   }
-  let dd: number | string = date.getDate();
-  let mm: number | string = date.getMonth() + 1;
+  date = isDayjs(date) ? dayjs(date).toDate() : date
+  let dd: number | string = date.getDate() as number;
+  let mm: number | string = date.getMonth() + 1 as number;
   const yyyy: number = date.getFullYear();
 
-  if (dd < 10) dd = '0' + dd;
-  if (mm < 10) mm = '0' + mm;
+  if (dd < 10) {
+    dd = '0' + dd;
+  }
+  if (mm < 10) {
+    mm = '0' + mm;
+  }
 
   return `${yyyy}-${mm}-${dd}`;
 }

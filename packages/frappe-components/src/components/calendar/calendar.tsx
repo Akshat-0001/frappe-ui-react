@@ -50,7 +50,7 @@ export const Calendar = ({ events: initialEvents = [], config: initialConfig = {
       increment,
       updateActiveView: setActiveView
   };
-
+  console.log(state)
   return (
     <CalendarContext.Provider value={{ ...state, ...actions }}>
       <div className="flex h-full flex-col overflow-hidden">
@@ -62,8 +62,8 @@ export const Calendar = ({ events: initialEvents = [], config: initialConfig = {
               {headerProps.currentMonthYear}
             </span>
             <div className="flex gap-x-1">
-              <Button onClick={decrement} variant="ghost" icon={<ChevronLeft size={16} />} />
-              <Button onClick={increment} variant="ghost" icon={<ChevronRight size={16} />} />
+              <Button onClick={decrement} variant="ghost" icon={() => <ChevronLeft size={16} />} />
+              <Button onClick={increment} variant="ghost" icon={() => <ChevronRight size={16} />} />
             </div>
           </div>
         )}

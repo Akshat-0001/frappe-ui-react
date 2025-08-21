@@ -4,6 +4,7 @@ import { action } from "storybook/actions";
 
 import type { CalendarConfig, CalendarEvent } from "./types";
 import { Calendar } from "./calendar";
+import TabButtons from "../TabButtons";
 
 const meta: Meta<typeof Calendar> = {
   title: "Components/Calendar",
@@ -29,7 +30,9 @@ const config = {
   eventIcons: {},
   allowCustomClickEvents: true,
   redundantCellHeight: 100,
+  hourHeight: 50,
   enableShortcuts: false,
+    timeFormat: '12h',
 };
 
 const getCurrentMonthYear = () => {
@@ -122,7 +125,14 @@ export const Default: Story = {
 export const CustomHeader: Story = {
   args: {
     ...Default.args,
-    header: ({ currentMonthYear, decrement, increment }) => (
+    header: ({
+      currentMonthYear,
+      decrement,
+      increment,
+      enabledModes,
+      activeView,
+      updateActiveView,
+    }) => (
       <div className="flex items-center justify-between p-4 border-b">
         <div className="flex items-center gap-4">
           <h1 className="text-xl font-bold">{currentMonthYear}</h1>
@@ -140,6 +150,16 @@ export const CustomHeader: Story = {
               Next
             </button>
           </div>
+          <TabButtons
+            buttons={enabledModes.map(
+              (mode: { id: string; label: string }) => ({
+                value: mode.id,
+                label: mode.label,
+              })
+            )}
+            value={activeView}
+            onChange={updateActiveView}
+          />
         </div>
       </div>
     ),

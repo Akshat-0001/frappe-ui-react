@@ -1,9 +1,12 @@
-.cell[data-time-attr]::before {
+.calendar-column {
+  position: relative;
+}
+
+.calendar-column ::before {
   content: attr(data-time-attr);
   position: absolute;
   left: -45px;
   top: -9px;
   font-size: 12px;
   font-weight: 400;
-  color: #6b7280;
 }
