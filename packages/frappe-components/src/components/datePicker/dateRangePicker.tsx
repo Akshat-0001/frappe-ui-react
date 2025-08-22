@@ -2,7 +2,7 @@ import type { DatePickerProps } from "./types";
 import { useDatePicker } from "./useDatePicker";
 import { getDate, getDateValue } from "./utils";
 import { Popover } from "../popover";
-import { Button } from "../Button";
+import { Button } from "../button";
 import { TextInput } from "../textInput";
 import { useEffect, useMemo, useState } from "react";
 
@@ -135,7 +135,6 @@ function useDateRangePicker({
 export const DateRangePicker: React.FC<DatePickerProps> = ({
   value,
   placeholder,
-  inputClass,
   placement,
   label,
   onChange,
@@ -183,9 +182,6 @@ export const DateRangePicker: React.FC<DatePickerProps> = ({
               if (from) return from;
               return "";
             })()}
-            className={`w-full ${
-              typeof inputClass === "string" ? inputClass : ""
-            }`}
           />
         </div>
       )}

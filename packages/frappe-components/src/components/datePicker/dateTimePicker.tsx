@@ -2,7 +2,7 @@ import type { DatePickerProps } from "./types";
 import { useDatePicker } from "./useDatePicker";
 import { getDate, getDateValue } from "./utils";
 import { Popover } from "../popover";
-import { Button } from "../Button";
+import { Button } from "../button";
 import { TextInput } from "../textInput";
 import { useEffect, useMemo, useState } from "react";
 
@@ -127,7 +127,6 @@ export const DateTimePicker: React.FC<DatePickerProps> = ({
   value,
   placeholder,
   formatter,
-  inputClass,
   placement,
   label,
   onChange,
@@ -171,9 +170,6 @@ export const DateTimePicker: React.FC<DatePickerProps> = ({
             type="text"
             placeholder={placeholder}
             value={dateValue && formatter ? formatter(dateValue) : dateValue}
-            className={`w-full ${
-              typeof inputClass === "string" ? inputClass : ""
-            }`}
           />
         </div>
       )}

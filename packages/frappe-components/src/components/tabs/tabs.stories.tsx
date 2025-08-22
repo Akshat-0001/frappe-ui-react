@@ -62,7 +62,7 @@ export const WithoutIcon: Story = {
     className: "border border-gray-200 rounded",
   },
   render: (args) => (
-    <Story layout={{ type: "grid", width: "80%" }}>
+    <Story layout={{ width: 900 }}>
       <Variant title="Tabs without Icon">
         <Tabs {...args} />
       </Variant>
@@ -94,7 +94,7 @@ export const WithIcon: Story = {
     className: "border border-gray-200 rounded",
   },
   render: (args) => (
-    <Story layout={{ type: "grid", width: "80%" }}>
+    <Story layout={{ width: 900 }}>
       <Variant title="Tabs with Icon">
         <Tabs {...args} />
       </Variant>
@@ -130,7 +130,7 @@ export const VerticalWithIcon: Story = {
     className: "border border-gray-200 rounded",
   },
   render: (args) => (
-    <Story layout={{ type: "grid", width: "80%" }}>
+    <Story layout={{ width: 900 }}>
       <Variant title="Vertical Tabs with Icon">
         <Tabs {...args} />
       </Variant>
