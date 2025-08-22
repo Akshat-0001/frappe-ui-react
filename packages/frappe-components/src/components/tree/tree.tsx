@@ -37,9 +37,9 @@ export const Tree: React.FC<TreeProps> = ({
         {renderIcon ? (
           renderIcon({ hasChildren, isCollapsed })
         ) : hasChildren && !isCollapsed ? (
-          <FeatherIcon name="chevron-down" className="h-3.5 w-3.5" />
+          <FeatherIcon name="chevron-down" height={14} width={14} />
         ) : hasChildren ? (
-          <FeatherIcon name="chevron-right" className="h-3.5 w-3.5" />
+          <FeatherIcon name="chevron-right" height={14} width={14} />
         ) : null}
       </div>
       {/* Label slot */}
@@ -61,7 +61,10 @@ export const Tree: React.FC<TreeProps> = ({
       {hasChildren && !isCollapsed && (
         <div className="flex">
           {options.showIndentationGuides && (
-            <div style={{ paddingLeft: linePadding }} className="border-r border-gray-200" />
+            <div
+              style={{ paddingLeft: linePadding }}
+              className="border-r border-gray-200"
+            />
           )}
           <ul className="w-full" style={{ paddingLeft: options.indentWidth }}>
             {node.children.map((child) => (

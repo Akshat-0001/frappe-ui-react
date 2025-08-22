@@ -1,196 +1,172 @@
-import React, { useState } from "react";
-import type { Meta, StoryObj } from "@storybook/react-vite";
-import { TextInput } from "./index";
-import FeatherIcon from "../featherIcon";
+import { useState } from "react";
+import { Meta, StoryObj } from "@storybook/react-vite";
+import { TextInputProps } from "./types";
+import TextInput from "./textInput";
 import { Avatar } from "../avatar";
-import { Story, Variant } from "../Story";
+import FeatherIcon from "../featherIcon";
 
-const meta: Meta<typeof TextInput> = {
-  title: "Components/TextInput",
-  tags: ["autodocs"],
+export default {
+  title: 'Components/TextInput',
   component: TextInput,
   parameters: {
-    layout: "centered",
+    layout: 'centered',
   },
-};
-export default meta;
-
-type Story = StoryObj<typeof TextInput>;
-
-const inputTypes = [
-  "text",
-  "number",
-  "email",
-  "date",
-  "datetime-local",
-  "password",
-  "search",
-  "tel",
-  "time",
-  "url",
-] as const;
-const sizes = ["sm", "md", "lg", "xl"] as const;
-const variants = ["subtle", "outline"] as const;
-
-export const AllTypes: Story = {
-  render: (args) => {
-    const [val, setVal] = useState(args.value || "");
-    return (
-      <Story layout={{ type: "grid", width: 700 }}>
-        {inputTypes.map((type) => (
-          <Variant key={type} title={type}>
-            <TextInput
-              {...args}
-              type={type}
-              value={val}
-              onChange={(v: string | number) => {
-                setVal(String(v));
-                args.onChange?.(v);
-              }}
-            />
-          </Variant>
-        ))}
-      </Story>
-    );
-  },
-  args: {
-    size: "sm",
-    variant: "subtle",
-    placeholder: "Placeholder",
-    disabled: false,
-    value: "",
-    className: "",
-    onChange: () => {},
-  },
+  tags: ['autodocs'],
   argTypes: {
-    type: { control: false, description: "Input type" },
-    size: {
-      control: "select",
-      options: sizes,
-      description: "Input size",
-    },
-    variant: {
-      control: "select",
-      options: variants,
-      description: "Visual style variant",
+    options: {
+      control: 'object',
+      description: 'Array of option objects ({ label, value, disabled? })',
     },
     value: {
-      control: "text",
-      description: "Input value",
+      control: 'text',
+      description: 'The currently selected value',
     },
-    placeholder: {
-      control: "text",
-      description: "Placeholder text",
-    },
-    disabled: {
-      control: "boolean",
-      description: "Disable input",
-    },
-    onChange: {
-      action: "onChange",
-      description: "Callback when value changes",
-    },
-    className: {
-      control: "text",
-      description: "CSS classes for the input container",
-    },
+  },
+} as Meta<typeof TextInput>;
+
+
+const Template: StoryObj<TextInputProps> = {
+  render: (args) => {
+    const [value, setValue] = useState(args.value || "");
+
+    return (
+      <div className="p-4 w-[300px]">
+        <TextInput
+          {...args}
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+        />
+      </div>
+    );
   },
 };
 
-export const PrefixIcon: Story = {
-  render: (args) => {
-    const [val, setVal] = useState(args.value || "");
-    return (
-      <Story layout={{ type: "grid", width: 700 }}>
-        <Variant title="Prefix slot icon">
-          <TextInput
-            {...args}
-            value={val}
-            onChange={(v: string | number) => {
-              setVal(String(v));
-              args.onChange?.(v);
-            }}
-          />
-        </Variant>
-      </Story>
-    );
-  },
+export const Text = {
+  ...Template,
   args: {
-    type: "text",
-    size: "md",
-    variant: "subtle",
+    type: 'text',
+    placeholder: 'Placeholder',
     value: "",
-    placeholder: "Search...",
-    className: "",
-    prefix: <FeatherIcon className="w-4" name="search" />,
-    onChange: () => {},
   },
-  argTypes: { ...AllTypes.argTypes },
 };
 
-export const SuffixIcon: Story = {
-  render: (args) => {
-    const [val, setVal] = useState(args.value || "");
-    return (
-      <Story layout={{ type: "grid", width: 700 }}>
-        <Variant title="Suffix slot icon">
-          <TextInput
-            {...args}
-            value={val}
-            onChange={(v: string | number) => {
-              setVal(String(v));
-              args.onChange?.(v);
-            }}
-          />
-        </Variant>
-      </Story>
-    );
-  },
+export const Number = {
+  ...Template,
   args: {
-    type: "text",
-    size: "md",
-    variant: "subtle",
+    type: 'number',
+    placeholder: 'Placeholder',
     value: "",
-    placeholder: "Search...",
-    className: "",
-    suffix: <FeatherIcon className="w-4" name="search" />,
-    onChange: () => {},
   },
-  argTypes: { ...AllTypes.argTypes },
 };
 
-export const PrefixAvatar: Story = {
-  render: (args) => {
-    const [val, setVal] = useState(args.value || "");
-    return (
-      <Story layout={{ type: "grid", width: 700 }}>
-        <Variant title="Prefix slot avatar">
-          <TextInput
-            {...args}
-            value={val}
-            onChange={(v: string | number) => {
-              setVal(String(v));
-              args.onChange?.(v);
-            }}
-          />
-        </Variant>
-      </Story>
-    );
-  },
+export const Email = {
+  ...Template,
   args: {
-    type: "text",
-    size: "md",
-    variant: "subtle",
+    type: 'email',
+    placeholder: 'Placeholder',
     value: "",
-    placeholder: "With Avatar...",
-    className: "",
-    prefix: (
-      <Avatar
-        size="sm"
-        image="https://avatars.githubusercontent.com/u/499550?s=60&v=4"
-      />
-    ),
-    onChange: () => {},
   },
-  argTypes: { ...AllTypes.argTypes },
+};
+
+export const Date = {
+  ...Template,
+  args: {
+    type: 'date',
+    placeholder: 'Placeholder',
+    value: "",
+  },
+};
+export const DateTimeLocal = {
+  ...Template,
+  args: {
+    type: 'datetime-local',
+    value: "",
+  },
+};
+
+export const Password = {
+  ...Template,
+  args: {
+    type: 'password',
+    placeholder: 'Placeholder',
+    value: "",
+  },
+};
+
+export const Search = {
+  ...Template,
+  args: {
+    type: 'search',
+    placeholder: 'Placeholder',
+    value: "",
+  },
+};
+
+export const Telephone = {
+  ...Template,
+  args: {
+    type: 'tel',
+    placeholder: 'Placeholder',
+    value: "",
+  },
+};
+
+export const Time = {
+  ...Template,
+  args: {
+    type: 'time',
+    value: "",
+  },
+};
+
+export const Url = {
+  ...Template,
+  args: {
+    type: 'url',
+    placeholder: 'Placeholder',
+    value: "",
+  },
+};
+
+export const PrefixSlotIcon = {
+  ...Template,
+  args: {
+    type: 'url',
+    placeholder: 'Placeholder',
+    prefix: () => <FeatherIcon
+        className="w-4"
+        name="search"
+      />,
+    value: "",
+  },
+};
+
+export const SuffixSlotIcon = {
+  ...Template,
+  args: {
+    type: 'url',
+    placeholder: 'Placeholder',
+    suffix: () => <FeatherIcon
+        className="w-4"
+        name="search"
+      />,
+    value: "",
+  },
+};
+
+export const PrefixSlotAvatar = {
+  ...Template,
+  args: {
+    type: 'url',
+    placeholder: 'Placeholder',
+    prefix: () => <Avatar shape="circle" image="https://avatars.githubusercontent.com/u/499550?s=60&v=4" />,
+    value: "",
+  },
+};
+
+export const Default = {
+  ...Template,
+  args: {
+    value: "",
+  },
 };
