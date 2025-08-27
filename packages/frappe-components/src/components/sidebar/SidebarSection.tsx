@@ -52,7 +52,7 @@ const SidebarSection: React.FC<SidebarSectionProps> = ({
                 isCollapsed ? "opacity-100" : "opacity-0"
               }`}
             >
-              <hr className="w-full border-t border-ink-gray-3" />
+              <hr className="w-full border-t border-gray-200" />
             </div>
           )}
         </div>
