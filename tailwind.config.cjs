@@ -12,7 +12,6 @@ module.exports = {
       },
       colors: {
         inherit: "var(--color-inherit)",
-        current: "var(--color-current)",
         transparent: "var(--color-transparent)",
         black: "var(--color-black)",
         white: "var(--color-white)",
