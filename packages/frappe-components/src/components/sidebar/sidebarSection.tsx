@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SidebarItem from "./sidebarItem";
 import { LucideChevronDown } from "lucide-react";
 
@@ -6,17 +6,17 @@ export type SidebarSectionProps = {
   label?: string;
   items: any[];
   collapsible?: boolean;
-  isCollapsed: boolean;
-  setCollapsed: (value: boolean) => void;
+  sidebarCollapsed: boolean;
 };
 
 const SidebarSection: React.FC<SidebarSectionProps> = ({
   label,
   items,
   collapsible,
-  isCollapsed,
-  setCollapsed,
+  sidebarCollapsed,
 }) => {
+  const [collapsed, setCollapsed] = useState(false);
+
   return (
     <div className="flex flex-col mt-2">
       {label && (
@@ -24,32 +24,30 @@ const SidebarSection: React.FC<SidebarSectionProps> = ({
           className={`relative flex items-center gap-1 px-2 py-1.5 ${
             collapsible ? "cursor-pointer" : ""
           }`}
-          onClick={() =>
-            collapsible ? setCollapsed?.(!isCollapsed) : undefined
-          }
+          onClick={() => (collapsible ? setCollapsed(!collapsed) : undefined)}
         >
           <h3
             className={`h-4 text-sm text-ink-gray-5 transition-all duration-300 ease-in-out ${
-              isCollapsed
+              sidebarCollapsed
                 ? "w-0 overflow-hidden opacity-0"
                 : "w-auto opacity-100"
             }`}
           >
             {label}
           </h3>
-          {collapsible && !isCollapsed && (
+          {collapsible && !sidebarCollapsed && (
             <span
               className={`w-4 h-4 text-ink-gray-5 transition-all duration-300 ease-in-out ${
-                !isCollapsed ? "" : "-rotate-90"
+                !collapsed ? "" : "-rotate-90"
               }`}
             >
               <LucideChevronDown size={16} className="text-ink-gray-6" />
             </span>
           )}
-          {isCollapsed && (
+          {sidebarCollapsed && (
             <div
               className={`absolute top-0 left-0 flex h-full w-full items-center justify-center transition-all duration-300 ease-in-out ${
-                isCollapsed ? "opacity-100" : "opacity-0"
+                sidebarCollapsed ? "opacity-100" : "opacity-0"
               }`}
             >
               <hr className="w-full border-t border-gray-200" />
@@ -60,7 +58,12 @@ const SidebarSection: React.FC<SidebarSectionProps> = ({
       {/* Collapsible nav */}
       <nav className="space-y-0.5 flex flex-col align-start justify-between">
         {items.map((item: any) => (
-          <SidebarItem key={item.label} {...item} isCollapsed={isCollapsed} />
+          <SidebarItem
+            key={item.label}
+            {...item}
+            isCollapsed={collapsed}
+            sidebarCollapsed={sidebarCollapsed}
+          />
         ))}
       </nav>
     </div>

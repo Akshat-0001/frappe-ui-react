@@ -92,8 +92,7 @@ const Sidebar: React.FC<SidebarProps> = ({
       {sections.map((section) => (
         <SidebarSection
           key={section.label}
-          isCollapsed={shouldCollapse}
-          setCollapsed={setCollapsed}
+          sidebarCollapsed={shouldCollapse}
           {...section}
         />
       ))}
@@ -110,7 +109,7 @@ const Sidebar: React.FC<SidebarProps> = ({
         <SidebarItem
           label={shouldCollapse ? "Expand" : "Collapse"}
           onClick={() => !isMobile && setCollapsed(!isCollapsed)} // Prevent toggling on mobile
-          isCollapsed={shouldCollapse}
+					sidebarCollapsed={isCollapsed}
           icon={
             <span
               className={`transition-transform duration-300 ease-in-out ${
