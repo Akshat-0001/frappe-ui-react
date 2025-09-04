@@ -13,7 +13,6 @@ button, label, input {
   :root {
     /* Base Colors */
     --color-inherit: inherit;
-    --color-current: currentColor;
     --color-transparent: transparent;
     --color-black: #000;
     --color-white: #fff;
