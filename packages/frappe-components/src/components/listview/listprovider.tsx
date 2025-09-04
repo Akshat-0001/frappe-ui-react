@@ -81,6 +81,7 @@ export const ListProvider: React.FC<ListProviderProps> = ({
       } else {
         newSelections.add(id);
       }
+
       return newSelections;
     });
   }, []);
@@ -106,7 +107,9 @@ export const ListProvider: React.FC<ListProviderProps> = ({
 
   useMemo(() => {
     if (selections.size > 0) {
-      setActiveRow(null);
+      setActiveRow({
+        value: null
+      });
     }
   }, [selections.size]);
 

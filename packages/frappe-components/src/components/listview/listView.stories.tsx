@@ -297,6 +297,7 @@ export const CustomList: Story = {
   render: (args) => {
     return (
       <div className="h-[250px]">
+        <MemoryRouter>
         <ListView
           {...args}
           columns={custom_columns}
@@ -318,6 +319,7 @@ export const CustomList: Story = {
               {custom_rows.map((row) => (
                 <ListRow key={row.id} row={row}>
                   {custom_columns.map((column, index) => {
+                    //@ts-expects-error
                     const item = row[column.key];
                     return (
                       <div className={`${index === 0 ? 'ml-4' : ''}`}>
@@ -381,6 +383,7 @@ export const CustomList: Story = {
             </ListSelectBanner>
           </>
         </ListView>
+        </MemoryRouter>
       </div>
     );
   },
@@ -424,6 +427,7 @@ export const GroupedRows: Story = {
 
 export const CellSlot: Story = {
   render: (args) => {
+    //@ts-expects-error
     const CustomCell = ({ item, column }) => {
       if (column.key === "status") {
         return <Badge>{item}</Badge>;

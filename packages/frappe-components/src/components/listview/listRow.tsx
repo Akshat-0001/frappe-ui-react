@@ -63,7 +63,7 @@ const ListRow: React.FC<ListRowProps> = ({ row, isLastRow = false, children}) =>
       if (list.options.onRowClick) {
         list.options.onRowClick(row, e);
       }
-      if (list.activeRow.value === row.name) {
+      if (list.activeRow?.value === row.name) {
         list.activeRow.value = null;
       } else {
         list.activeRow.value = row.name;
@@ -105,7 +105,6 @@ const ListRow: React.FC<ListRowProps> = ({ row, isLastRow = false, children}) =>
             className="w-fit pr-2 py-3 flex"
             onClick={(e) => {
               e.stopPropagation();
-              list.toggleRow(row[list.rowKey]);
             }}
             onDoubleClick={(e) => e.stopPropagation()}
           >
