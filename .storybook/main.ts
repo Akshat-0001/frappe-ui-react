@@ -1,5 +1,8 @@
+import { createRequire } from "node:module";
 import type { StorybookConfig } from "@storybook/react-vite";
-import path from "path";
+import path, { dirname, join } from "path";
+
+const require = createRequire(import.meta.url);
 
 const config: StorybookConfig = {
   stories: [
@@ -7,15 +10,14 @@ const config: StorybookConfig = {
     "../**/src/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
   addons: [
-    "@chromatic-com/storybook",
-    "@storybook/addon-docs",
-    "@storybook/addon-onboarding",
-    "@storybook/addon-a11y",
-    "storybook-dark-mode",
-    // "@storybook/addon-vitest",
+    getAbsolutePath("@chromatic-com/storybook"),
+    getAbsolutePath("@storybook/addon-docs"),
+    getAbsolutePath("@storybook/addon-onboarding"),
+    getAbsolutePath("@storybook/addon-a11y"),
+		getAbsolutePath("storybook-dark-mode"),
   ],
   framework: {
-    name: "@storybook/react-vite",
+    name: getAbsolutePath("@storybook/react-vite"),
     options: {},
   },
   viteFinal(config) {
@@ -35,3 +37,7 @@ const config: StorybookConfig = {
   },
 };
 export default config;
+
+function getAbsolutePath(value: string): any {
+  return dirname(require.resolve(join(value, "package.json")));
+}
