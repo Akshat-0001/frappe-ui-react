@@ -2,6 +2,7 @@ import { useToasts } from "./useToast";
 import ToastProvider from "./toastProvider";
 import { Button } from "../button";
 import { MemoryRouter } from "react-router";
+import { Meta } from "@storybook/react-vite/*";
 
 export default {
   title: "Components/Toast",
@@ -12,7 +13,7 @@ export default {
       </ToastProvider>
     ),
   ],
-};
+} as Meta<typeof ToastProvider>;
 
 const ToastTriggerComponent = () => {
   const toast = useToasts();
@@ -31,7 +32,7 @@ const ToastTriggerComponent = () => {
 
     toast.promise(promise, {
       loading: "Performing operation...",
-      success: (data) => data,
+      success: (data) => data as string,
       error: (err) => err.message,
       duration: 3,
     });
