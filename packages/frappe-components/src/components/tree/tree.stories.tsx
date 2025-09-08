@@ -79,5 +79,17 @@ export const Default: Story = {
       description: "Key used for node identification",
     },
     options: { control: "object", description: "Tree options" },
+    renderNode: {
+      control: false,
+      description: "Custom node renderer function",
+    },
+    renderIcon: {
+      control: false,
+      description: "Custom icon renderer function",
+    },
+    renderLabel: {
+      control: false,
+      description: "Custom label renderer function",
+    },
   },
 };

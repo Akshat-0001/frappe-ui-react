@@ -10,6 +10,34 @@ const meta: Meta<typeof Tabs> = {
   parameters: {
     layout: "centered",
   },
+  argTypes: {
+    tabs: {
+      control: false,
+      description: "Array of tab objects to display",
+    },
+    tabIndex: {
+      control: "number",
+      name: "Tab Index",
+      description: "Currently selected tab index",
+    },
+    onTabChange: {
+      action: "onTabChange",
+      description: "Callback when tab changes",
+    },
+    className: {
+      control: "text",
+      description: "CSS classes for the Tabs container",
+    },
+    vertical: {
+      control: "boolean",
+      name: "Vertical",
+      description: "Display tabs vertically",
+    },
+    children: {
+      control: false,
+      description: "Content inside the Tabs component",
+    },
+  },
 };
 export default meta;
 

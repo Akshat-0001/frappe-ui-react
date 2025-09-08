@@ -10,6 +10,33 @@ const meta: Meta<typeof Combobox> = {
   parameters: {
     layout: "centered",
   },
+  argTypes: {
+    options: {
+      control: "object",
+      description:
+        "Array of options (strings or objects) to display in the combobox",
+    },
+    value: {
+      control: "text",
+      description: "Currently selected value",
+    },
+    placeholder: {
+      control: "text",
+      description: "Placeholder text when no value is selected",
+    },
+    disabled: {
+      control: "boolean",
+      description: "Whether the combobox is disabled",
+    },
+    onChange: {
+      action: "changed",
+      description: "Event handler called when the selected value changes",
+    },
+    className: {
+      control: "text",
+      description: "Additional CSS classes to apply to the combobox container",
+    },
+  },
 };
 export default meta;
 

@@ -10,6 +10,31 @@ const meta: Meta<typeof FileUploader> = {
   parameters: {
     layout: "centered",
   },
+  tags: ["autodocs"],
+  argTypes: {
+    fileTypes: {
+      control: "object",
+      description:
+        "Array of accepted file MIME types (e.g., ['image/*', 'application/pdf'])",
+    },
+    validateFile: {
+      description: "Function to validate the selected file before upload",
+    },
+    onSuccess: {
+      description: "Callback function called upon successful file upload",
+    },
+    children: {
+      description:
+        "Render prop function that provides upload state and controls",
+    },
+    onFailure: {
+      description: "Callback function called upon failed file upload",
+    },
+    uploadArgs: {
+      control: "object",
+      description: "Additional arguments for the upload request",
+    },
+  },
 };
 export default meta;
 

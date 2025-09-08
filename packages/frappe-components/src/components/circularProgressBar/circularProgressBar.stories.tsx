@@ -41,6 +41,7 @@ export default {
   parameters: {
     layout: "padded",
   },
+  tags: ["autodocs"],
 } as Meta<typeof CircularProgressBar>;
 
 const Template: StoryObj<CircularProgressBarProps> = {

@@ -31,6 +31,7 @@ export default {
   parameters: {
     layout: "padded",
   },
+  tags: ["autodocs"],
 } as Meta<typeof Dropdown>;
 
 const actions: DropdownOptions = [

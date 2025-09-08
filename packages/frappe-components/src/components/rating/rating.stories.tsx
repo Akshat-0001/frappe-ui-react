@@ -14,28 +14,31 @@ const meta: Meta<typeof Rating> = {
     value: {
       control: { type: "number", min: 0, max: 5 },
       description: "Current rating value",
-      table: { category: "Props" },
     },
     size: {
       control: { type: "select" },
       options: ["sm", "md", "lg", "xl"],
       description: "Size of the rating icons",
-      table: { category: "Props" },
     },
     label: {
       control: "text",
       description: "Optional label for the rating",
-      table: { category: "Props" },
     },
     onChange: {
       action: "onChange",
       description: "Callback when rating changes",
-      table: { category: "Events" },
     },
     className: {
       control: "text",
       description: "Custom CSS classes for the container",
-      table: { category: "Props" },
+    },
+    ratingFrom: {
+      control: { type: "number", min: 0, max: 5 },
+      description: "Rating scale",
+    },
+    readonly: {
+      control: "boolean",
+      description: "If true, the rating is read-only",
     },
   },
 };
