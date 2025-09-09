@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import { ButtonVariant } from '../button';
+import type { ButtonVariant } from '../button';
 
 export interface ListOptionsProps {
   emptyState?: {

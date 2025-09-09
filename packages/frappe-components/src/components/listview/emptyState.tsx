@@ -8,7 +8,7 @@ interface EmptyStateProps {
 const EmptyState = ({ children }: EmptyStateProps) => {
   const list = useContext(ListContext);
 
-  if (!list) {
+  if (!list || !list.options || !list.options.emptyState) {
     throw new Error('EmptyState must be used within a ListContext.Provider');
   }
 
