@@ -23,7 +23,7 @@ export default {
     },
   },
   parameters: {
-    layout: "padded",
+    layout: "centered",
   },
   tags: ["autodocs"],
 } as Meta<typeof Breadcrumbs>;

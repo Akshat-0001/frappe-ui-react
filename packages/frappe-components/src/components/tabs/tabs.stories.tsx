@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Tabs } from "./index";
 import FeatherIcon from "../featherIcon";
-import { Story, Variant } from "../Story";
 
 const meta: Meta<typeof Tabs> = {
   title: "Components/Tabs",
@@ -89,13 +88,7 @@ export const WithoutIcon: Story = {
     onTabChange: () => {},
     className: "border border-gray-200 rounded",
   },
-  render: (args) => (
-    <Story layout={{ width: 900 }}>
-      <Variant title="Tabs without Icon">
-        <Tabs {...args} />
-      </Variant>
-    </Story>
-  ),
+  render: (args) => <Tabs {...args} />,
   argTypes: {
     tabs: { control: false, description: "Array of tab objects to display." },
     tabIndex: {
@@ -121,13 +114,7 @@ export const WithIcon: Story = {
     onTabChange: () => {},
     className: "border border-gray-200 rounded",
   },
-  render: (args) => (
-    <Story layout={{ width: 900 }}>
-      <Variant title="Tabs with Icon">
-        <Tabs {...args} />
-      </Variant>
-    </Story>
-  ),
+  render: (args) => <Tabs {...args} />,
   argTypes: {
     tabs: {
       control: false,
@@ -157,13 +144,7 @@ export const VerticalWithIcon: Story = {
     vertical: true,
     className: "border border-gray-200 rounded",
   },
-  render: (args) => (
-    <Story layout={{ width: 900 }}>
-      <Variant title="Vertical Tabs with Icon">
-        <Tabs {...args} />
-      </Variant>
-    </Story>
-  ),
+  render: (args) => <Tabs {...args} />,
   argTypes: {
     tabs: {
       control: false,

@@ -26,7 +26,7 @@ const meta: Meta<typeof Dialog> = {
     ),
   ],
   parameters: {
-    layout: "padded",
+    layout: "centered",
   },
   tags: ["autodocs"],
   argTypes: {

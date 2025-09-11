@@ -1,7 +1,6 @@
 import * as React from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Combobox } from "./index";
-import { Story, Variant } from "../Story";
 
 const meta: Meta<typeof Combobox> = {
   title: "Components/Combobox",
@@ -131,9 +130,7 @@ export const SimpleStringOptions: Story = {
   render: (args) => {
     const [val, setVal] = React.useState("");
     return (
-      <Story layout={{ type: "grid", width: 400 }}>
-        <Variant title="Simple String Options">
-          <div className="flex flex-col w-full">
+          <div className="flex flex-col w-80">
             <label className="block text-sm font-medium mb-2">
               Simple Options
             </label>
@@ -142,8 +139,6 @@ export const SimpleStringOptions: Story = {
               Selected: {val || "None"}
             </div>
           </div>
-        </Variant>
-      </Story>
     );
   },
 };
@@ -158,9 +153,7 @@ export const ObjectOptions: Story = {
   render: (args) => {
     const [val, setVal] = React.useState("");
     return (
-      <Story layout={{ type: "grid", width: 400 }}>
-        <Variant title="Object Options">
-          <div className="flex flex-col w-full">
+          <div className="flex flex-col w-80">
             <label className="block text-sm font-medium mb-2">
               Object Options
             </label>
@@ -169,8 +162,6 @@ export const ObjectOptions: Story = {
               Selected: {val || "None"}
             </div>
           </div>
-        </Variant>
-      </Story>
     );
   },
 };
@@ -186,9 +177,7 @@ export const WithIcons: Story = {
   render: (args) => {
     const [val, setVal] = React.useState("");
     return (
-      <Story layout={{ type: "grid", width: 400 }}>
-        <Variant title="Options with Icons">
-          <div className="flex flex-col w-full">
+          <div className="flex flex-col w-80">
             <label className="block text-sm font-medium mb-2">
               Options with Icons
             </label>
@@ -197,8 +186,6 @@ export const WithIcons: Story = {
               Selected: {val || "None"}
             </div>
           </div>
-        </Variant>
-      </Story>
     );
   },
 };
@@ -214,9 +201,7 @@ export const Grouped: Story = {
   render: (args) => {
     const [val, setVal] = React.useState("");
     return (
-      <Story layout={{ type: "grid", width: 400 }}>
-        <Variant title="Grouped Options">
-          <div className="flex flex-col w-full">
+          <div className="flex flex-col w-80">
             <label className="block text-sm font-medium mb-2">
               Grouped Options
             </label>
@@ -225,8 +210,7 @@ export const Grouped: Story = {
               Selected: {val || "None"}
             </div>
           </div>
-        </Variant>
-      </Story>
+
     );
   },
 };
@@ -240,16 +224,12 @@ export const DisabledState: Story = {
     onChange: () => {},
   },
   render: (args) => (
-    <Story layout={{ type: "grid", width: 400 }}>
-      <Variant title="Disabled State">
-        <div className="flex flex-col w-full">
+        <div className="flex flex-col w-80">
           <label className="block text-sm font-medium mb-2">
             Disabled Combobox
           </label>
           <Combobox {...args} />
         </div>
-      </Variant>
-    </Story>
   ),
 };
 
@@ -264,9 +244,7 @@ export const PreselectedValue: Story = {
   render: (args) => {
     const [val, setVal] = React.useState("john-doe");
     return (
-      <Story layout={{ type: "grid", width: 400 }}>
-        <Variant title="Pre-selected Value">
-          <div className="flex flex-col w-full">
+          <div className="flex flex-col w-80">
             <label className="block text-sm font-medium mb-2">
               Pre-selected Value
             </label>
@@ -275,8 +253,6 @@ export const PreselectedValue: Story = {
               Selected: {val || "None"}
             </div>
           </div>
-        </Variant>
-      </Story>
     );
   },
 };
@@ -286,8 +262,6 @@ export const PreselectedValue: Story = {
 export const MultipleSelection: Story = {
   name: "Multiple Selection (Not Implemented)",
   render: () => (
-    <Story layout={{ type: "grid", width: 400 }}>
-      <Variant title="Multiple Selection - Simple">
         <div className="p-4">
           <label className="block text-sm font-medium mb-2">
             Multiple Simple Options
@@ -296,8 +270,6 @@ export const MultipleSelection: Story = {
             Not implemented in this Combobox
           </div>
         </div>
-      </Variant>
-    </Story>
   ),
 };
 
@@ -313,9 +285,7 @@ export const ComplexObject: Story = {
     const [val, setVal] = React.useState("");
     const selected = complexObjects.find((o) => o.value === val);
     return (
-      <Story layout={{ type: "grid", width: 400 }}>
-        <Variant title="Complex Objects (Display Value Demo)">
-          <div className="flex flex-col w-full">
+          <div className="flex flex-col w-80">
             <label className="block text-sm font-medium mb-2">
               Complex Objects
             </label>
@@ -330,8 +300,6 @@ export const ComplexObject: Story = {
               )}
             </div>
           </div>
-        </Variant>
-      </Story>
     );
   },
 };

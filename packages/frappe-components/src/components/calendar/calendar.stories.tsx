@@ -10,7 +10,7 @@ const meta: Meta<typeof Calendar> = {
   title: "Components/Calendar",
   component: Calendar,
   parameters: {
-    layout: "fullscreen",
+    layout: "centered",
   },
   argTypes: {
     config: {

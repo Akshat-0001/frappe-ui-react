@@ -4,6 +4,9 @@ import Spinner from "./spinner";
 const meta: Meta<typeof Spinner> = {
   title: "Components/Spinner",
   component: Spinner,
+  parameters: {
+    layout: "centered",
+  },
   decorators: [
     (Story) => (
       <div

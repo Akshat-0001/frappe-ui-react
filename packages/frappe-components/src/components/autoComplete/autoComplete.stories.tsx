@@ -40,6 +40,9 @@ const meta: Meta<typeof Autocomplete> = {
   title: "Components/Autocomplete",
   component: Autocomplete,
   tags: ["autodocs"],
+  parameters: {
+    layout: "centered",
+  },
   argTypes: {
     value: {
       control: "object",

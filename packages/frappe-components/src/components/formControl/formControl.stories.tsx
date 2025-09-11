@@ -8,7 +8,7 @@ const meta: Meta<typeof FormControl> = {
   title: "Components/FormControl",
   component: FormControl,
   parameters: {
-    layout: "padded",
+    layout: "centered",
   },
   tags: ["autodocs"],
   argTypes: {
@@ -135,11 +135,13 @@ export const Select: Story = {
   render: (args) => {
     const [value, setValue] = useState("");
     return (
-      <FormControl
-        {...args}
-        value={value}
-        onChange={(_value: string) => setValue(_value)}
-      />
+      <div className="w-40">
+        <FormControl
+          {...args}
+          value={value}
+          onChange={(_value: string) => setValue(_value)}
+        />
+      </div>
     );
   },
 };

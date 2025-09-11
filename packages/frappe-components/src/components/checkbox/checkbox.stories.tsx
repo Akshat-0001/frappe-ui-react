@@ -7,6 +7,9 @@ import { useState } from "react";
 export default {
   title: "Components/Checkbox",
   component: Checkbox,
+  parameters: {
+    layout: "centered",
+  },
   argTypes: {
     label: {
       control: "text",
@@ -41,9 +44,6 @@ export default {
 			control: "text",
 			description: "The HTML id attribute for the checkbox input",
 		}
-  },
-  parameters: {
-    layout: "padded",
   },
   tags: ["autodocs"],
 } as Meta<typeof Checkbox>;

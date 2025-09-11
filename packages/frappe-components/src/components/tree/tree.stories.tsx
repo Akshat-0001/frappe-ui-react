@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Tree } from "./index";
-import { Story, Variant } from "../Story";
 
 const meta: Meta<typeof Tree> = {
   title: "Components/Tree",
@@ -65,13 +64,7 @@ export const Default: Story = {
       defaultCollapsed: true,
     },
   },
-  render: (args) => (
-    <Story layout={{ type: "grid", width: 700 }}>
-      <Variant title="default" flexJustify="start" minHeight={0}>
-        <Tree {...args} />
-      </Variant>
-    </Story>
-  ),
+  render: (args) => <Tree {...args} />,
   argTypes: {
     node: { control: false, description: "Root tree node object" },
     nodeKey: {

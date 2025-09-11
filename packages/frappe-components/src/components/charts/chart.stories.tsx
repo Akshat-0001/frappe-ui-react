@@ -1,10 +1,10 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import AxisChart from "./axisChart";
-import DonutChart from "./donutChart";
-import FunnelChart from "./funnelChart";
-import NumberChart from "./numberChart";
+import AxisChart, { AxisChartProps } from "./axisChart";
+import DonutChart, { DonutChartProps } from "./donutChart";
+import FunnelChart, { FunnelChartProps } from "./funnelChart";
+import NumberChart, { NumberChartProps } from "./numberChart";
 import type {
   AxisChartConfig,
   DonutChartConfig,
@@ -197,7 +197,7 @@ const funnelConfig: FunnelChartConfig = {
 const meta: Meta<typeof NumberChart> = {
   title: "Components/Charts",
   parameters: {
-    layout: "fullscreen",
+    layout: "centered",
   },
   argTypes: {
     config: {
@@ -213,9 +213,8 @@ const meta: Meta<typeof NumberChart> = {
 };
 
 export default meta;
-type Story = StoryObj;
 
-export const NumberCharts: Story = {
+export const NumberCharts: StoryObj<NumberChartProps> = {
   render: () => (
     <div className="flex gap-2 p-4">
       <NumberChart config={numberChart1Config} />
@@ -225,7 +224,7 @@ export const NumberCharts: Story = {
   ),
 };
 
-export const SimpleBar: Story = {
+export const SimpleBar: StoryObj<AxisChartProps> = {
   render: () => (
     <div className="h-[400px] w-full p-4">
       <AxisChart config={simpleConfig} />
@@ -233,7 +232,7 @@ export const SimpleBar: Story = {
   ),
 };
 
-export const StackedBar: Story = {
+export const StackedBar: StoryObj<AxisChartProps> = {
   render: () => (
     <div className="h-[400px] w-full p-4">
       <AxisChart config={stackedConfig} />
@@ -241,7 +240,7 @@ export const StackedBar: Story = {
   ),
 };
 
-export const ComboBarLine: Story = {
+export const ComboBarLine: StoryObj<AxisChartProps> = {
   render: () => (
     <div className="h-[400px] w-full p-4">
       <AxisChart config={comboConfig} />
@@ -249,7 +248,7 @@ export const ComboBarLine: Story = {
   ),
 };
 
-export const HorizontalBar: Story = {
+export const HorizontalBar: StoryObj<AxisChartProps> = {
   render: () => (
     <div className="h-[400px] w-full p-4">
       <AxisChart config={horizontalConfig} />
@@ -257,7 +256,7 @@ export const HorizontalBar: Story = {
   ),
 };
 
-export const Area: Story = {
+export const Area: StoryObj<AxisChartProps> = {
   render: () => (
     <div className="h-[400px] w-full p-4">
       <AxisChart config={areaConfig} />
@@ -265,7 +264,7 @@ export const Area: Story = {
   ),
 };
 
-export const Donut: Story = {
+export const Donut: StoryObj<DonutChartProps> = {
   render: () => (
     <div className="h-[400px] w-full p-4">
       <DonutChart config={donutConfig} />
@@ -273,7 +272,7 @@ export const Donut: Story = {
   ),
 };
 
-export const Funnel: Story = {
+export const Funnel: StoryObj<FunnelChartProps> = {
   render: () => (
     <div className="h-[400px] w-full p-4">
       <FunnelChart config={funnelConfig} />
