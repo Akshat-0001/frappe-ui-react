@@ -143,7 +143,9 @@ export const CustomHeader: Story = {
     }) => (
       <div className="flex items-center justify-between p-4 border-b">
         <div className="flex items-center gap-4">
-          <h1 className="text-xl font-bold text-ink-gray-1">{currentMonthYear}</h1>
+          <h1 className="text-xl font-bold text-ink-gray-1">
+            {currentMonthYear}
+          </h1>
           <div className="flex items-center gap-1 text-ink-gray-1">
             <button
               onClick={decrement}
@@ -186,9 +188,15 @@ export const CustomClickEvents: Story = {
     config: {
       ...config,
       allowCustomClickEvents: true,
-      onClick: action("onClick"),
-      onDblClick: action("onDblClick"),
-      onCellDblClick: action("onCellDblClick"),
+      onClick: () => {
+        console.log("Cell clicked");
+      },
+      onDblClick: () => {
+        console.log("Cell double clicked");
+      },
+      onCellDblClick: () => {
+        console.log("Cell double clicked");
+      },
     },
     events,
   },
