@@ -191,9 +191,15 @@ export const CustomClickEvents: Story = {
     config: {
       ...config,
       allowCustomClickEvents: true,
-      onClick: action("onClick"),
-      onDblClick: action("onDblClick"),
-      onCellDblClick: action("onCellDblClick"),
+      onClick: () => {
+        console.log("Cell clicked");
+      },
+      onDblClick: () => {
+        console.log("Cell double clicked");
+      },
+      onCellDblClick: () => {
+        console.log("Cell double clicked");
+      },
     },
     events,
   },

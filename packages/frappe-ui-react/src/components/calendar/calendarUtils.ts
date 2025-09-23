@@ -238,6 +238,6 @@ export function sortMonthlyEvents(events: CalendarEvent[]) {
           ? 1
           : -1,
     )
-  // full day events should be at the top in month view
+
   return [...fullDayEvents, ...timedEvents]
 }
