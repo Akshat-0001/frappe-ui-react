@@ -45,7 +45,6 @@ const config = {
 
 const events: CalendarEvent[] = [
   {
-
     title: "English by Ryan Mathew",
     participant: "Ryan Mathew",
     id: "EDU-CSH-2024-00091",
@@ -57,7 +56,6 @@ const events: CalendarEvent[] = [
     color: "violet",
   },
   {
-
     title: "English by Ryan Mathew",
     participant: "Ryan Mathew",
     id: "EDU-CSH-2024-00092",
@@ -69,7 +67,6 @@ const events: CalendarEvent[] = [
     color: "green",
   },
   {
-
     title: "English by Sheldon",
     participant: "Sheldon",
     id: "EDU-CSH-2024-00093",
@@ -81,7 +78,6 @@ const events: CalendarEvent[] = [
     color: "blue",
   },
   {
-
     title: "English by Ryan Mathew",
     participant: "Ryan Mathew",
     id: "EDU-CSH-2024-00094",
@@ -94,7 +90,6 @@ const events: CalendarEvent[] = [
   },
   {
     title: "Google Meet with John ",
-
     participant: "John",
     id: "#htrht41",
     venue: "Google Meet",
@@ -106,7 +101,6 @@ const events: CalendarEvent[] = [
     isFullDay: true,
   },
   {
-
     title: "Zoom Meet with Sheldon",
     participant: "Sheldon",
     id: "#htrht42",

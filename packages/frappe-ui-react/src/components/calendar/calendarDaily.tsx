@@ -26,7 +26,6 @@ export const CalendarDaily = () => {
   }, [hourHeight]);
 
   const parsedCurrentDate = parseDate(currentDate);
-  console.log(timeArray, timedEvents[parsedCurrentDate])
 
   return (
     <div className="h-[90%] min-h-[500px] min-w-[600px]">

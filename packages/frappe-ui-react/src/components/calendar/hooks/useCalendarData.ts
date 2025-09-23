@@ -33,3 +33,4 @@ export const useCalendarData = (events: CalendarEvent[], view = '') => {
 
   return { timedEvents, fullDayEvents };
 };
+
