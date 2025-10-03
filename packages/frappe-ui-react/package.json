@@ -15,7 +15,9 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b"
+    "build": "tsc -b && vite build --config ../../vite.config.ts",
+    "publish:locally": "npm build && npm publish --registry http://localhost:4873 --access public",
+    "publish:remote": "npm build && npm publish --access public"
   },
   "dependencies": {
     "@floating-ui/react": "^0.27.13",
