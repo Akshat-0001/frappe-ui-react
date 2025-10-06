@@ -3,21 +3,20 @@
   "version": "1.0.0-beta.0",
   "main": "dist/index.js",
   "module": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "types": "dist-types/index.d.ts",
   "private": false,
   "sideEffects": false,
   "exports": {
     ".": {
-      "import": "./src/index.js",
-      "require": "./src/index.js"
-    },
-    "./theme.css": "./src/theme.css"
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist-types/index.d.ts"
+    }
   },
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build --config ../../vite.config.ts",
-    "publish:locally": "npm build && npm publish --registry http://localhost:4873 --access public",
-    "publish:remote": "npm build && npm publish --access public"
+    "build": "tsc -b",
+    "publish:locally": "npm run build && npm publish --registry http://localhost:4873 --access public",
+    "publish:remote": "npm run build && npm publish --access public"
   },
   "dependencies": {
     "@floating-ui/react": "^0.27.13",
