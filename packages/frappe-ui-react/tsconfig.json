@@ -11,7 +11,8 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "declarationDir": "dist-types"
   },
   "include": ["src"],
   "exclude": [
@@ -19,6 +20,7 @@
     "dist",
     "**/*.test.ts",
     "**/*.stories.tsx",
-    "**/tests/*.(tsx|ts)"
+    "**/tests/**/*.ts",
+    "**/tests/**/*.tsx"
   ]
 }

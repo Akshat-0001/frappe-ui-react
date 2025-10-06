@@ -2,28 +2,27 @@ name: Publish To Github Pages
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 env:
   CI: false
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    
+
     permissions:
-      contents: 'read'
-      id-token: 'write'
-      pages: 'write'
-      actions: 'write'
-      checks: 'write'
-      deployments: 'write'
+      contents: "read"
+      id-token: "write"
+      pages: "write"
+      actions: "write"
+      checks: "write"
+      deployments: "write"
     strategy:
       matrix:
         node-version: [18.x]
@@ -34,7 +33,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c
         with:
-          node-version-file: '.nvmrc'
+          node-version-file: ".nvmrc"
           cache: npm
       - name: Install dependencies
         run: |
@@ -42,7 +41,7 @@ jobs:
       - name: Build Storybook
         run: |
           npm run build-storybook
-        
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:

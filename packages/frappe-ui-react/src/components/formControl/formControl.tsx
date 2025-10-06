@@ -3,7 +3,7 @@ import { FormControlProps } from "./types";
 import { Autocomplete } from "../autoComplete";
 import { Checkbox } from "../checkbox";
 import { TextInput } from "../textInput";
-import type { SizeTypes } from "../../types";
+import type { SizeTypes } from "../../common/types";
 import FormLabel from "../formLabel";
 import Textarea from "../textarea/textarea";
 import { Select, type SelectOption } from "../select";
