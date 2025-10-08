@@ -1,5 +1,4 @@
 import { Meta, StoryObj } from "@storybook/react-vite";
-import { MemoryRouter } from "react-router";
 import { action } from "storybook/actions";
 
 import type { CalendarConfig, CalendarEvent } from "./types";
@@ -125,11 +124,9 @@ export const Default: Story = {
     events,
   },
   render: (args) => (
-    <MemoryRouter>
       <div className="flex h-screen flex-col overflow-hidden p-5">
         <Calendar {...args} />
       </div>
-    </MemoryRouter>
   ),
 };
 
@@ -178,11 +175,9 @@ export const CustomHeader: Story = {
     ),
   },
   render: (args) => (
-    <MemoryRouter>
-      <div className="flex h-screen flex-col overflow-hidden p-5">
-        <Calendar {...args} />
-      </div>
-    </MemoryRouter>
+		<div className="flex h-screen flex-col overflow-hidden p-5">
+			<Calendar {...args} />
+		</div>
   ),
 };
 
@@ -204,10 +199,8 @@ export const CustomClickEvents: Story = {
     events,
   },
   render: (args) => (
-    <MemoryRouter>
-      <div className="flex h-screen flex-col overflow-hidden p-5">
-        <Calendar {...args} />
-      </div>
-    </MemoryRouter>
+		<div className="flex h-screen flex-col overflow-hidden p-5">
+			<Calendar {...args} />
+		</div>
   ),
 };
