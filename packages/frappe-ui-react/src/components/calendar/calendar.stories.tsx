@@ -41,6 +41,14 @@ const config = {
   enableShortcuts: false,
   timeFormat: "12h",
 };
+const getCurrentMonthYear = () => {
+  const date = new Date();
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  return `${year}-${month}`;
+};
+
+const currentMonthYear = getCurrentMonthYear();
 
 const events: CalendarEvent[] = [
   {
@@ -48,8 +56,8 @@ const events: CalendarEvent[] = [
     participant: "Ryan Mathew",
     id: "EDU-CSH-2024-00091",
     venue: "CNF-ROOM-2024-00001",
-    fromDate: "2025-09-02",
-    toDate: "2025-09-02",
+    fromDate: `${currentMonthYear}-02`,
+    toDate: `${currentMonthYear}-02`,
     fromTime: "16:30",
     toTime: "17:30",
     color: "violet",
@@ -59,8 +67,8 @@ const events: CalendarEvent[] = [
     participant: "Ryan Mathew",
     id: "EDU-CSH-2024-00092",
     venue: "CNF-ROOM-2024-00002",
-    fromDate: "2025-09-04",
-    toDate: "2025-09-04",
+    fromDate: `${currentMonthYear}-04`,
+    toDate: `${currentMonthYear}-04`,
     fromTime: "13:30",
     toTime: "17:30",
     color: "green",
@@ -70,8 +78,8 @@ const events: CalendarEvent[] = [
     participant: "Sheldon",
     id: "EDU-CSH-2024-00093",
     venue: "CNF-ROOM-2024-00001",
-    fromDate: "2025-09-16",
-    toDate: "2025-09-16",
+    fromDate: `${currentMonthYear}-16`,
+    toDate: `${currentMonthYear}-16`,
     fromTime: "10:30",
     toTime: "11:30",
     color: "blue",
@@ -81,8 +89,8 @@ const events: CalendarEvent[] = [
     participant: "Ryan Mathew",
     id: "EDU-CSH-2024-00094",
     venue: "CNF-ROOM-2024-00001",
-    fromDate: "2025-09-21",
-    toDate: "2025-09-21",
+    fromDate: `${currentMonthYear}-21`,
+    toDate: `${currentMonthYear}-21`,
     fromTime: "16:30",
     toTime: "17:30",
     color: "red",
@@ -92,8 +100,8 @@ const events: CalendarEvent[] = [
     participant: "John",
     id: "#htrht41",
     venue: "Google Meet",
-    fromDate: "2025-09-11",
-    toDate: "2025-09-11",
+    fromDate: `${currentMonthYear}-11`,
+    toDate: `${currentMonthYear}-11`,
     fromTime: "00:00",
     toTime: "02:00",
     color: "amber",
@@ -104,8 +112,8 @@ const events: CalendarEvent[] = [
     participant: "Sheldon",
     id: "#htrht42",
     venue: "Google Meet",
-    fromDate: "2025-09-07",
-    toDate: "2025-09-07",
+    fromDate: `${currentMonthYear}-07`,
+    toDate: `${currentMonthYear}-07`,
     fromTime: "00:00",
     toTime: "02:00",
     color: "amber",
