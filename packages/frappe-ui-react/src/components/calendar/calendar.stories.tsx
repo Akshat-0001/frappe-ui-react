@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react-vite";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { action } from "storybook/actions";
 
 import type { CalendarConfig, CalendarEvent } from "./types";
@@ -9,7 +9,7 @@ const meta: Meta<typeof Calendar> = {
   title: "Components/Calendar",
   component: Calendar,
   parameters: {
-    layout: "centered",
+    layout: "fullscreen",
   },
   argTypes: {
     config: {
