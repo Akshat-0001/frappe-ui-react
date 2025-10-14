@@ -1,3 +1,9 @@
+[![Tests](https://img.shields.io/badge/tests-passing-brightgreen)](#)
+[![Build](https://img.shields.io/badge/build-passing-brightgreen?logo=githubactions)](#)
+[![ESLint](https://img.shields.io/badge/code%20style-eslint-4B32C3?logo=eslint)](#)
+[![Prettier](https://img.shields.io/badge/code%20style-prettier-ff69b4?logo=prettier)](#)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
+
 # Frappe UI React
 
 Frappe UI React is a component library designed for rapid UI development using React 19 and Tailwind 4. It is inspired by the original [frappe-ui](https://github.com/frappe/frappe-ui), offering a similar aesthetic for a consistent user experience. However, we are not limited to a one-to-one port and also provide a growing collection of custom-built components to give developers more power and flexibility.
