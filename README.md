@@ -20,7 +20,7 @@ yarn add @rtcamp/frappe-ui-react
 #### index.css
 
 ```css
-@import @frappe-ui-react/theme.css
+@import @rtcamp/frappe-ui-react/theme.css
 ```
 
 #### app.tsx
