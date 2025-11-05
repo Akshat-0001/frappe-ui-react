@@ -349,97 +349,6 @@ input {
     --color-dark-violet-800: #281e5d;
     --color-dark-violet-900: #221c42;
 
-    /* Semantic Colors */
-    /* Ink Colors (Text) */
-    --ink-white: var(--color-white);
-    --ink-gray-1: var(--color-gray-200);
-    --ink-gray-2: var(--color-gray-300);
-    --ink-gray-3: var(--color-gray-400);
-    --ink-gray-4: var(--color-gray-500);
-    --ink-gray-5: var(--color-gray-600);
-    --ink-gray-6: var(--color-gray-700);
-    --ink-gray-7: var(--color-gray-700);
-    --ink-gray-8: var(--color-gray-800);
-    --ink-gray-9: var(--color-gray-900);
-    --ink-red-1: var(--color-red-50);
-    --ink-red-2: var(--color-red-400);
-    --ink-red-3: var(--color-red-500);
-    --ink-red-4: var(--color-red-600);
-    --ink-green-1: var(--color-green-50);
-    --ink-green-2: var(--color-green-500);
-    --ink-green-3: var(--color-green-600);
-    --ink-amber-1: var(--color-amber-50);
-    --ink-amber-2: var(--color-amber-500);
-    --ink-amber-3: var(--color-amber-600);
-    --ink-blue-1: var(--color-blue-50);
-    --ink-blue-2: var(--color-blue-500);
-    --ink-blue-3: var(--color-blue-600);
-    --ink-cyan-1: var(--color-cyan-500);
-    --ink-pink-1: var(--color-pink-500);
-    --ink-violet-1: var(--color-violet-500);
-    --ink-blue-link: var(--color-blue-400);
-
-    /* Surface Colors (Backgrounds) */
-    --surface-white: var(--color-white);
-    --surface-gray-1: var(--color-gray-50);
-    --surface-gray-2: var(--color-gray-100);
-    --surface-gray-3: var(--color-gray-200);
-    --surface-gray-4: var(--color-gray-300);
-    --surface-gray-5: var(--color-gray-700);
-    --surface-gray-6: var(--color-gray-800);
-    --surface-gray-7: var(--color-gray-900);
-    --surface-red-1: var(--color-red-50);
-    --surface-red-2: var(--color-red-100);
-    --surface-red-3: var(--color-red-200);
-    --surface-red-4: var(--color-red-300);
-    --surface-red-5: var(--color-red-600);
-    --surface-red-6: var(--color-red-700);
-    --surface-red-7: var(--color-red-800);
-    --surface-green-1: var(--color-green-50);
-    --surface-green-2: var(--color-green-100);
-    --surface-green-3: var(--color-green-600);
-    --surface-amber-1: var(--color-amber-50);
-    --surface-amber-2: var(--color-amber-100);
-    --surface-amber-3: var(--color-amber-600);
-    --surface-blue-1: var(--color-blue-50);
-    --surface-blue-2: var(--color-blue-100);
-    --surface-blue-3: var(--color-blue-600);
-    --surface-orange-1: var(--color-orange-100);
-    --surface-orange-2: var(--color-orange-600);
-    --surface-violet-1: var(--color-violet-100);
-    --surface-violet-2: var(--color-violet-600);
-    --surface-purple-1: var(--color-purple-100);
-    --surface-purple-2: var(--color-purple-600);
-    --surface-yellow-1: var(--color-yellow-100);
-    --surface-teal-1: var(--color-teal-100);
-    --surface-teal-2: var(--color-teal-600);
-    --surface-cyan-1: var(--color-cyan-100);
-    --surface-cyan-2: var(--color-cyan-600);
-    --surface-pink-1: var(--color-pink-100);
-    --surface-pink-2: var(--color-pink-600);
-    --surface-menu-bar: var(--color-gray-50);
-    --surface-cards: var(--color-white);
-    --surface-modal: var(--color-white);
-    --surface-selected: var(--color-white);
-
-    /* Outline Colors (Borders) */
-    --outline-white: var(--color-white);
-    --outline-gray-1: var(--color-gray-200);
-    --outline-gray-2: var(--color-gray-300);
-    --outline-gray-3: var(--color-gray-400);
-    --outline-gray-4: var(--color-gray-500);
-    --outline-gray-5: var(--color-gray-800);
-    --outline-red-1: var(--color-red-300);
-    --outline-red-2: var(--color-red-400);
-    --outline-red-3: var(--color-red-500);
-    --outline-green-1: var(--color-green-300);
-    --outline-green-2: var(--color-green-400);
-    --outline-amber-1: var(--color-amber-300);
-    --outline-amber-2: var(--color-amber-400);
-    --outline-blue-1: var(--color-blue-300);
-    --outline-orange-1: var(--color-orange-400);
-    --outline-gray-modals: var(--color-gray-200);
-
     /* Border Radius */
     --radius-none: 0px;
     --radius-sm: 0.25rem;
@@ -734,4 +643,96 @@ input {
     --shadow-2xl: 0px 0px 1px rgba(0, 0, 0, 0.6),
       0px 1px 3px rgba(0, 0, 0, 0.15), 0px 10px 24px -3px rgba(0, 0, 0, 0.3);
   }
+}
+@theme {
+    /* Semantic Colors */
+    /* Ink Colors (Text) */
+    --color-ink-white: var(--color-white);
+    --color-ink-gray-1: var(--color-gray-200);
+    --color-ink-gray-2: var(--color-gray-300);
+    --color-ink-gray-3: var(--color-gray-400);
+    --color-ink-gray-4: var(--color-gray-500);
+    --color-ink-gray-5: var(--color-gray-600);
+    --color-ink-gray-6: var(--color-gray-700);
+    --color-ink-gray-7: var(--color-gray-700);
+    --color-ink-gray-8: var(--color-gray-800);
+    --color-ink-gray-9: var(--color-gray-900);
+    --color-ink-red-1: var(--color-red-50);
+    --color-ink-red-2: var(--color-red-400);
+    --color-ink-red-3: var(--color-red-500);
+    --color-ink-red-4: var(--color-red-600);
+    --color-ink-green-1: var(--color-green-50);
+    --color-ink-green-2: var(--color-green-500);
+    --color-ink-green-3: var(--color-green-600);
+    --color-ink-amber-1: var(--color-amber-50);
+    --color-ink-amber-2: var(--color-amber-500);
+    --color-ink-amber-3: var(--color-amber-600);
+    --color-ink-blue-1: var(--color-blue-50);
+    --color-ink-blue-2: var(--color-blue-500);
+    --color-ink-blue-3: var(--color-blue-600);
+    --color-ink-cyan-1: var(--color-cyan-500);
+    --color-ink-pink-1: var(--color-pink-500);
+    --color-ink-violet-1: var(--color-violet-500);
+    --color-ink-blue-link: var(--color-blue-400);
+
+    /* Surface Colors (Backgrounds) */
+    --color-surface-white: var(--color-white);
+    --color-surface-gray-1: var(--color-gray-50);
+    --color-surface-gray-2: var(--color-gray-100);
+    --color-surface-gray-3: var(--color-gray-200);
+    --color-surface-gray-4: var(--color-gray-300);
+    --color-surface-gray-5: var(--color-gray-700);
+    --color-surface-gray-6: var(--color-gray-800);
+    --color-surface-gray-7: var(--color-gray-900);
+    --color-surface-red-1: var(--color-red-50);
+    --color-surface-red-2: var(--color-red-100);
+    --color-surface-red-3: var(--color-red-200);
+    --color-surface-red-4: var(--color-red-300);
+    --color-surface-red-5: var(--color-red-600);
+    --color-surface-red-6: var(--color-red-700);
+    --color-surface-red-7: var(--color-red-800);
+    --color-surface-green-1: var(--color-green-50);
+    --color-surface-green-2: var(--color-green-100);
+    --color-surface-green-3: var(--color-green-600);
+    --color-surface-amber-1: var(--color-amber-50);
+    --color-surface-amber-2: var(--color-amber-100);
+    --color-surface-amber-3: var(--color-amber-600);
+    --color-surface-blue-1: var(--color-blue-50);
+    --color-surface-blue-2: var(--color-blue-100);
+    --color-surface-blue-3: var(--color-blue-600);
+    --color-surface-orange-1: var(--color-orange-100);
+    --color-surface-orange-2: var(--color-orange-600);
+    --color-surface-violet-1: var(--color-violet-100);
+    --color-surface-violet-2: var(--color-violet-600);
+    --color-surface-purple-1: var(--color-purple-100);
+    --color-surface-purple-2: var(--color-purple-600);
+    --color-surface-yellow-1: var(--color-yellow-100);
+    --color-surface-teal-1: var(--color-teal-100);
+    --color-surface-teal-2: var(--color-teal-600);
+    --color-surface-cyan-1: var(--color-cyan-100);
+    --color-surface-cyan-2: var(--color-cyan-600);
+    --color-surface-pink-1: var(--color-pink-100);
+    --color-surface-pink-2: var(--color-pink-600);
+    --color-surface-menu-bar: var(--color-gray-50);
+    --color-surface-cards: var(--color-white);
+    --color-surface-modal: var(--color-white);
+    --color-surface-selected: var(--color-white);
+
+    /* Outline Colors (Borders) */
+    --color-outline-white: var(--color-white);
+    --color-outline-gray-1: var(--color-gray-200);
+    --color-outline-gray-2: var(--color-gray-300);
+    --color-outline-gray-3: var(--color-gray-400);
+    --color-outline-gray-4: var(--color-gray-500);
+    --color-outline-gray-5: var(--color-gray-800);
+    --color-outline-red-1: var(--color-red-300);
+    --color-outline-red-2: var(--color-red-400);
+    --color-outline-red-3: var(--color-red-500);
+    --color-outline-green-1: var(--color-green-300);
+    --color-outline-green-2: var(--color-green-400);
+    --color-outline-amber-1: var(--color-amber-300);
+    --color-outline-amber-2: var(--color-amber-400);
+    --color-outline-blue-1: var(--color-blue-300);
+    --color-outline-orange-1: var(--color-orange-400);
+    --color-outline-gray-modals: var(--color-gray-200);
 }
