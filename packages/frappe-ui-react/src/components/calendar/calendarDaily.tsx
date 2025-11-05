@@ -91,10 +91,10 @@ export const CalendarDaily = () => {
                 />
               </div>
             ))}
-            {(timedEvents[parsedCurrentDate] || []).map((event) => (
+            {(timedEvents[parsedCurrentDate] || []).map((event, idx) => (
               <CalendarEvent
                 key={event.id}
-                event={event}
+                event={{ ...event, idx }}
                 date={currentDate.toDate()}
                 extraClassName="absolute mb-2 cursor-pointer"
               />

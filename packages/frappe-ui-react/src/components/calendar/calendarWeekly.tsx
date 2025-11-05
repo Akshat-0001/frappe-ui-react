@@ -184,8 +184,8 @@ export const CalendarWeekly = ({ weeklyDates }: CalendarWeeklyProps) => {
                       />
                     </div>
                   ))}
-                  {(timedEvents[parseDate(date)] || []).map((event) => (
-                    <CalendarEvent key={event.id} event={event} date={date} />
+                  {(timedEvents[parseDate(date)] || []).map((event, idx) => (
+                    <CalendarEvent key={event.id} event={{ ...event, idx }} date={date} />
                   ))}
                   <CalendarTimeMarker date={date} />
                 </div>
