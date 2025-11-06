@@ -31,7 +31,7 @@
   },
   "scripts": {
     "build": "tsc -b && npm run copy-assets",
-    "copy-assets": "node scripts/copy-assets.js && cp ../../tailwind.config.cjs  dist/utils/tailwind.config.cjs && cp ../../tailwindExtend.json  dist/utils/tailwindExtend.json",
+    "copy-assets": "node scripts/copy-assets.js",
     "publish:local": "npm publish --registry http://localhost:4873",
     "unpublish:local": "npm unpublish --registry http://localhost:4873 --force",
     "publish:remote": "npm publish"
