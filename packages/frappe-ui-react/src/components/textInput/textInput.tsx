@@ -137,7 +137,7 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
           <div
             className={`absolute inset-y-0 left-0 flex items-center ${textColor} ${prefixClasses}`}
           >
-            {prefix && prefix(size)}
+            {prefix?.(size)}
           </div>
         )}
         <input
