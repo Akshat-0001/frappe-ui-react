@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Meta, StoryObj } from "@storybook/react-vite";
 import Password from "./password"; // Assuming your component is in Password.tsx
 import { PasswordProps } from "./types"; // Assuming your types are in types/password.ts
@@ -11,10 +11,6 @@ export default {
       control: "text",
       description: "The current value of the password input.",
     },
-    placeholder: {
-      control: "text",
-      description: "Placeholder text for the password input.",
-    },
     onChange: {
       action: "changed",
       description: "Event handler called when the value changes.",
@@ -26,8 +22,16 @@ export default {
 } as Meta<typeof Password>;
 
 const Template: StoryObj<PasswordProps> = {
+	args: {
+		value: "",
+		placeholder: "",
+	},
   render: (args) => {
     const [value, setValue] = useState(args.value || "");
+
+		useEffect(() => {
+			setValue(args.value || "");
+		}, [args.value]);
 
     return (
       <div className="p-4 w-[300px]">
@@ -35,7 +39,7 @@ const Template: StoryObj<PasswordProps> = {
           {...args}
           value={value}
           onChange={(e) => setValue(e.target.value)}
-          placeholder="Enter your password"
+          placeholder={args.placeholder || "Enter your password"}
         />
       </div>
     );
