@@ -53,10 +53,10 @@ const Select: React.FC<SelectProps> = ({
 
   const paddingClasses = useMemo(() => {
     return {
-      sm: `pl-${prefix ? "8" : "2"} pr-5`,
-      md: `pl-${prefix ? "9" : "2.5"} pr-5.5`,
-      lg: `pl-${prefix ? "10" : "3"} pr-6`,
-      xl: `pl-${prefix ? "10" : "3"} pr-6`,
+      sm: `pl-${prefix ? "9" : "2"} pr-5`,
+      md: `pl-${prefix ? "10" : "2.5"} pr-5.5`,
+      lg: `pl-${prefix ? "12" : "3"} pr-6`,
+      xl: `pl-${prefix ? "13" : "3"} pr-6`,
     }[size];
   }, [prefix, size]);
 
