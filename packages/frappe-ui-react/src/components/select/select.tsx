@@ -53,12 +53,12 @@ const Select: React.FC<SelectProps> = ({
 
   const paddingClasses = useMemo(() => {
     return {
-      sm: "pl-2 pr-5",
-      md: "pl-2.5 pr-5.5",
-      lg: "pl-3 pr-6",
-      xl: "pl-3 pr-6",
+      sm: prefix ? "pl-9 pr-5" : "pl-2 pr-5",
+      md: prefix ? "pl-10 pr-5.5" : "pl-2.5 pr-5.5",
+      lg: prefix ? "pl-12 pr-6" : "pl-3 pr-6",
+      xl: prefix ? "pl-13 pr-6" : "pl-3 pr-6",
     }[size];
-  }, [size]);
+  }, [prefix, size]);
 
   const selectClasses = useMemo(() => {
     const sizeClasses = {
@@ -107,7 +107,7 @@ const Select: React.FC<SelectProps> = ({
         <div
           className={`absolute inset-y-0 left-0 flex items-center ${textColor} ${prefixClasses} pointer-events-none`}
         >
-          {typeof prefix === "function" ? prefix() : prefix}
+          {prefix?.(size)}
         </div>
       )}
       {placeholder && !value && (
