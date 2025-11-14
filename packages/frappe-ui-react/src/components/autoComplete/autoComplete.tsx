@@ -479,7 +479,7 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
                 </ComboboxOptions>
 
                 {showFooter && multiple && (
-                  <div className="border-t p-1">
+                  <div className="border-t p-1 border-outline-gray-2">
                     {multiple ? (
                       <div className="flex items-center justify-end">
                         {!areAllOptionsSelected && (
