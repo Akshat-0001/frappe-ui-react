@@ -8,9 +8,11 @@ const meta: Meta = {
   tags: ["autodocs"],
   component: DatePicker,
   parameters: {
-    docs: { source: { type: "dynamic" } },
     layout: "centered",
-    docs: { autodocs: true },
+    docs: { 
+      source: { type: "dynamic" },
+      autodocs: true 
+    },
   },
 };
 export default meta;
