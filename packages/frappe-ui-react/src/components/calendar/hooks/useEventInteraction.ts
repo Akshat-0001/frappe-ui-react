@@ -178,6 +178,8 @@ export const useEventInteraction = (
     (e: React.MouseEvent) => {
       e.preventDefault();
       const startY = e.clientY;
+      const eventWidth = ((eventRef.current?.offsetWidth || 0) * 100) / 80;
+      const startX = e.clientX;
       let finalEventState = { ...event };
 
       const mousemove = (moveEvent: MouseEvent) => {
@@ -191,17 +193,23 @@ export const useEventInteraction = (
         const minuteHeight = config.hourHeight / 60;
         const height_15_min = minuteHeight * 15;
         const deltaY = moveEvent.clientY - startY;
+        const deltaX = moveEvent.clientX - startX;
         const snappedY = Math.round(deltaY / height_15_min) * height_15_min;
-        dispatchReposition({ type: "MOVE", payload: { x: 0, y: deltaY } });
+        dispatchReposition({ type: "MOVE", payload: { x: deltaX, y: deltaY } });
 
         const minuteDelta = Math.round(snappedY / minuteHeight);
         const fromMinutes = calculateMinutes(event.from_time) + minuteDelta;
         const toMinutes = calculateMinutes(event.to_time) + minuteDelta;
+        const newDate = new Date(
+          new Date(event.date).getTime() +
+            Math.round((deltaX / eventWidth) * 24) * 60 * 60 * 1000
+        );
 
         finalEventState = {
           ...finalEventState,
           from_time: convertMinutesToHours(fromMinutes),
           to_time: convertMinutesToHours(toMinutes),
+          date: newDate.toISOString().split("T")[0],
         };
 
         setEventTime({
