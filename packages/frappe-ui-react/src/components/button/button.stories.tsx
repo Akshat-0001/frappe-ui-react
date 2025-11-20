@@ -48,14 +48,6 @@ export default {
       action: "clicked",
       description: "Function to call when the button is clicked.",
     },
-    prefixIcon: {
-      control: "text",
-      description: 'Icon to display before the label (e.g., "plus", "home").',
-    },
-    suffixIcon: {
-      control: "text",
-      description: 'Icon to display after the label (e.g., "arrow-right").',
-    },
     icon: {
       control: "text",
       description: "Main icon for icon-only buttons.",
