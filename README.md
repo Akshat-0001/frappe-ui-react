@@ -31,7 +31,7 @@ Import the theme CSS directly into your project (e.g., in `index.css`) and provi
 @source "../../node_modules/@rtcamp/frappe-ui-react/dist";
 ```
 
-[Tailwind @source directive](https://tailwindcss.com/docs/functions-and-directives#source-directive) explicitly specify source files that aren't picked up by Tailwind's automatic content detection.
+[Tailwind @source directive](https://tailwindcss.com/docs/functions-and-directives#source-directive) explicitly specifies source files that aren't picked up by Tailwind's automatic content detection.
 
 
 **(Tailwind v3 usage):** 
