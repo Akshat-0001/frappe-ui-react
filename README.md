@@ -24,7 +24,7 @@ npm install @rtcamp/frappe-ui-react
 
 ### Step 2: Configuration
 
-Import the theme CSS directly into your project (e.g., in `index.css`) and provide the source of the frappe-ui-react or the pacakge where it is imported so that it picks the styles automatically.
+Import the theme CSS directly into your project (e.g., in `index.css`) and provide the source of the frappe-ui-react or the package where it is imported so that it picks the styles automatically.
 
 ```css
 @import '@rtcamp/frappe-ui-react/theme';
