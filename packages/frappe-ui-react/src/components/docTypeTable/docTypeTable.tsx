@@ -88,18 +88,30 @@ const DocTypeTable: React.FC<DocTypeTableProps> = ({
   // Use the useFrappeGetDocList hook
   const { data, loading, error, fetch } = useFrappeGetDocList(fullParams, auto);
 
+  // Store latest callback props in refs to avoid unnecessary effect executions
+  const onDataLoadRef = React.useRef<DocTypeTableProps["onDataLoad"]>();
+  const onErrorRef = React.useRef<DocTypeTableProps["onError"]>();
+
+  React.useEffect(() => {
+    onDataLoadRef.current = onDataLoad;
+  }, [onDataLoad]);
+
+  React.useEffect(() => {
+    onErrorRef.current = onError;
+  }, [onError]);
+
   // Call callbacks when data or error changes
   React.useEffect(() => {
     if (data?.data) {
-      onDataLoad?.(data.data);
+      onDataLoadRef.current?.(data.data);
     }
-  }, [data?.data, onDataLoad]);
+  }, [data?.data]);
 
   React.useEffect(() => {
     if (error) {
-      onError?.(error);
+      onErrorRef.current?.(error);
     }
-  }, [error, onError]);
+  }, [error]);
 
   // Show loading state
   if (loading) {
