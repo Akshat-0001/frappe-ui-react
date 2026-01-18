@@ -81,7 +81,7 @@ Parameters passed to the API call:
 | `doctype` | `string` | The DocType name (set automatically) |
 | `fields` | `string[]` | Fields to retrieve from the server |
 | `filters` | `Record<string, any>` | Filters for the query |
-| `orderBy` | `string` | Order by clause (e.g., `` `tabUser`.`name` asc ``) |
+| `orderBy` | `string` | Order by clause (e.g., ``'`tabUser`.`name` asc'``) |
 | `limit` | `number` | Number of records to fetch |
 | `offset` | `number` | Offset for pagination |
 | `pageLength` | `number` | Alias for limit |
