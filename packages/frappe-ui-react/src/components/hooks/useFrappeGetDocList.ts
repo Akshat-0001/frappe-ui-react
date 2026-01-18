@@ -87,8 +87,13 @@ export function useFrappeGetDocList(
   // Create the fetch function
   const fetchDocList = async (): Promise<FrappeDocListResponse> => {
     const queryString = buildParams();
-    const url = `/api/resource/${params.doctype}?${queryString}`;
+    const doctype = params.doctype;
 
+    if (!/^[A-Za-z0-9_]+$/.test(doctype)) {
+      throw new Error("Invalid doctype parameter");
+    }
+
+    const url = `/api/resource/${doctype}?${queryString}`;
     const response = await fetch(url, {
       method: "GET",
       headers: {
